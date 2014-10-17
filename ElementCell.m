@@ -9,7 +9,7 @@
 #import "ElementCell.h"
 
 @implementation ElementCell
-
+@synthesize elementImage,elementSubDescription,elementDescription,elementTitle;
 - (void)awakeFromNib {
     // Initialization code
 }

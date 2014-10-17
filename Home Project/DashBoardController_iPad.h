@@ -10,5 +10,6 @@
 
 @interface DashBoardController_iPad : UIViewController<UITableViewDelegate>
 @property (nonatomic,retain)NSDictionary *deviceList;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 @end

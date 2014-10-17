@@ -204,9 +204,9 @@
 		E7382A0419EBE5C3000AA7DA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		E7382A0619ECFC3F000AA7DA /* DashBoardController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController_iPad.h; sourceTree = "<group>"; };
 		E7382A0719ECFC3F000AA7DA /* DashBoardController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController_iPad.m; sourceTree = "<group>"; };
-		E7A4AA0D19EF99F40081D199 /* ElementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementCell.xib; sourceTree = "<group>"; };
-		E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementCell.h; sourceTree = "<group>"; };
-		E7A4AA1019EF9C5D0081D199 /* ElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementCell.m; sourceTree = "<group>"; };
+		E7A4AA0D19EF99F40081D199 /* ElementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ElementCell.xib; path = ../ElementCell.xib; sourceTree = "<group>"; };
+		E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementCell.h; path = ../ElementCell.h; sourceTree = "<group>"; };
+		E7A4AA1019EF9C5D0081D199 /* ElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementCell.m; path = ../ElementCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +388,9 @@
 		E7012D1519EE8BDE001EBCE0 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */,
+				E7A4AA1019EF9C5D0081D199 /* ElementCell.m */,
+				E7A4AA0D19EF99F40081D199 /* ElementCell.xib */,
 				E73829DA19EBCEA6000AA7DA /* LoginViewController.h */,
 				E73829DB19EBCEA6000AA7DA /* LoginViewController.m */,
 				E7382A0619ECFC3F000AA7DA /* DashBoardController_iPad.h */,
@@ -420,9 +423,6 @@
 		E73829C719EBCEA6000AA7DA = {
 			isa = PBXGroup;
 			children = (
-				E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */,
-				E7A4AA1019EF9C5D0081D199 /* ElementCell.m */,
-				E7A4AA0D19EF99F40081D199 /* ElementCell.xib */,
 				E7382A0419EBE5C3000AA7DA /* libicucore.dylib */,
 				E7382A0219EBE595000AA7DA /* libz.dylib */,
 				E73829D219EBCEA6000AA7DA /* Home Project */,
