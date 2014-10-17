@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EB865D95-5D83-4DC9-B606-21C4A5DBECF1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Home Project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5C5DDC54-E3B4-4359-853B-F9B8F12C90D5</key>
+		<string>https://github.com/shalinipriyaannadurai/Home-Project.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Home Project.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5C5DDC54-E3B4-4359-853B-F9B8F12C90D5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shalinipriyaannadurai/Home-Project.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5C5DDC54-E3B4-4359-853B-F9B8F12C90D5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5C5DDC54-E3B4-4359-853B-F9B8F12C90D5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Home-Project</string>
+		</dict>
+	</array>
+</dict>
+</plist>

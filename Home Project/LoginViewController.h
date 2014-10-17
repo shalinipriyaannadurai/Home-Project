@@ -10,7 +10,10 @@
 
 @interface LoginViewController : UIViewController
 
-- (IBAction)loginButtonTapped:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *swipeUnlock;
+@property (weak, nonatomic) IBOutlet UIImageView *unlock;
+@property (weak, nonatomic) IBOutlet UIImageView *dotsView;
 
 @end
 

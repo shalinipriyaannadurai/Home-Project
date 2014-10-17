@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E7012C7319EE2A10001EBCE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73829DD19EBCEA6000AA7DA /* Main.storyboard */; };
-		E7012C7419EE2A18001EBCE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73829E219EBCEA6000AA7DA /* LaunchScreen.xib */; };
 		E7012CCA19EE5105001EBCE0 /* bulb_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7012C7A19EE5105001EBCE0 /* bulb_icon@2x.png */; };
 		E7012CCB19EE5105001EBCE0 /* door_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7012C7B19EE5105001EBCE0 /* door_icon@2x.png */; };
 		E7012CCC19EE5105001EBCE0 /* electronics_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7012C7C19EE5105001EBCE0 /* electronics_icon@2x.png */; };
@@ -191,7 +190,6 @@
 		E73829DB19EBCEA6000AA7DA /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E73829DE19EBCEA6000AA7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E73829E019EBCEA6000AA7DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E73829E319EBCEA6000AA7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E73829E919EBCEA6000AA7DA /* Home ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Home ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73829EE19EBCEA6000AA7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73829EF19EBCEA6000AA7DA /* Home_ProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Home_ProjectTests.m; sourceTree = "<group>"; };
@@ -452,7 +450,6 @@
 				E73829D819EBCEA6000AA7DA /* AppDelegate.m */,
 				E73829DD19EBCEA6000AA7DA /* Main.storyboard */,
 				E73829E019EBCEA6000AA7DA /* Images.xcassets */,
-				E73829E219EBCEA6000AA7DA /* LaunchScreen.xib */,
 				E73829D319EBCEA6000AA7DA /* Supporting Files */,
 			);
 			path = "Home Project";
@@ -564,7 +561,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7012C7419EE2A18001EBCE0 /* LaunchScreen.xib in Resources */,
 				E7012CF419EE5105001EBCE0 /* home_parts_bg.png in Resources */,
 				E7012CE319EE5105001EBCE0 /* key_icon@2x.png in Resources */,
 				E7012CF319EE5105001EBCE0 /* heat_icon.png in Resources */,
@@ -693,14 +689,6 @@
 				E73829DE19EBCEA6000AA7DA /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E73829E219EBCEA6000AA7DA /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E73829E319EBCEA6000AA7DA /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
