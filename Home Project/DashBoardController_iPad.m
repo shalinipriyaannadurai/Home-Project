@@ -16,35 +16,14 @@
 @end
 
 @implementation DashBoardController_iPad
-@synthesize deviceList,frequentDevices,allDevices,indicator;
+@synthesize deviceList,frequentDevices,allDevices,indicator,subView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [indicator startAnimating];
-    
-    UILabel *title=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, 60)];
-    title.text=@"DashBoard";
-    [title setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_navi.png"]]];
-    title.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:title];
-    
-    UIView *subView=[[UIView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.height, self.view.frame.size.width-60)];
-    [subView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginbg.png"]]];
-
-    
-    UILabel *header=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, 60)];
-    [header setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"frequen_bg.png"]]];
-    [header setBackgroundColor:[UIColor clearColor]];
-
-    header.text=@"Frequently Used Devices";
-    header.textColor=[UIColor whiteColor];
-
-    [subView addSubview:header];
 
     frequentDevices  = [[UITableView alloc] initWithFrame:self.view.frame];
-    [frequentDevices setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"total_bg.png"]]];
     [frequentDevices setBackgroundColor:[UIColor clearColor]];
-
     frequentDevices.transform = CGAffineTransformMakeRotation(M_PI/-2);
     frequentDevices.showsVerticalScrollIndicator = NO;
     frequentDevices.frame = CGRectMake(0, 60, self.view.frame.size.height, 100);
@@ -54,16 +33,11 @@
     [subView addSubview:frequentDevices];
     
     allDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 160, self.view.frame.size.height, self.view.frame.size.width-210)];
-    [allDevices setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"total_bg.png"]]];
     [allDevices setBackgroundColor:[UIColor clearColor]];
-
     allDevices.delegate = self;
     allDevices.dataSource = self;
     allDevices.tag=2;
     [subView addSubview:allDevices];
-    
-    [self.view addSubview:subView];
-    
     [self.view addSubview:indicator];
     
     Client *client = [Client sharedClient];
@@ -89,10 +63,14 @@
             cell.frame=CGRectMake(0, 0, 300, 100);
             cell.transform= CGAffineTransformMakeRotation(M_PI/2);
         }
-        else
-        cell.frame=CGRectMake(0, 0, 1024, 150);
-        [cell setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"home_parts_bg.png"]]];
-
+        else{
+        cell.frame=CGRectMake(0, 0, 1024, 100);
+//        for(UIView *tmpView in [cell subviews])
+//            if (tmpView.tag!=1) {
+//                [tmpView setFrame:CGRectMake(tmpView.frame.origin.x, tmpView.frame.origin.y, 1024, tmpView.frame.size.height)];
+//            }
+        }
+        [cell setBackgroundColor:[UIColor clearColor]];
     }
     if ([deviceList count]>=1) {
         cell.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
@@ -110,6 +88,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+
     if(tableView.tag==1){
         return 300;
     }
@@ -156,6 +138,7 @@
                                       error: nil];
     NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
     deviceList=[JSON valueForKey:@"result"];
+    [self.view addSubview:subView];
     [self.frequentDevices reloadData];
     [self.allDevices reloadData];
     [indicator stopAnimating];

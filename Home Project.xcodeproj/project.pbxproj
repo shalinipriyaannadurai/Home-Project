@@ -94,6 +94,9 @@
 		E7382A0819ECFC3F000AA7DA /* DashBoardController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = E7382A0719ECFC3F000AA7DA /* DashBoardController_iPad.m */; };
 		E7A4AA0E19EF99F40081D199 /* ElementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AA0D19EF99F40081D199 /* ElementCell.xib */; };
 		E7A4AA1119EF9C5D0081D199 /* ElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A4AA1019EF9C5D0081D199 /* ElementCell.m */; };
+		E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */; };
+		E7AC5F5B19F14D8200A8A303 /* TotalElements.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5A19F14D8200A8A303 /* TotalElements.xib */; };
+		E7AC5F5E19F14DB200A8A303 /* TotalElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC5F5D19F14DB200A8A303 /* TotalElementCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +210,10 @@
 		E7A4AA0D19EF99F40081D199 /* ElementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ElementCell.xib; path = ../ElementCell.xib; sourceTree = "<group>"; };
 		E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementCell.h; path = ../ElementCell.h; sourceTree = "<group>"; };
 		E7A4AA1019EF9C5D0081D199 /* ElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementCell.m; path = ../ElementCell.m; sourceTree = "<group>"; };
+		E7AC5F5819F11B6700A8A303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Home Project/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
+		E7AC5F5A19F14D8200A8A303 /* TotalElements.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TotalElements.xib; path = ../TotalElements.xib; sourceTree = "<group>"; };
+		E7AC5F5C19F14DB200A8A303 /* TotalElementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TotalElementCell.h; path = ../TotalElementCell.h; sourceTree = "<group>"; };
+		E7AC5F5D19F14DB200A8A303 /* TotalElementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TotalElementCell.m; path = ../TotalElementCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +395,9 @@
 		E7012D1519EE8BDE001EBCE0 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				E7AC5F5A19F14D8200A8A303 /* TotalElements.xib */,
+				E7AC5F5C19F14DB200A8A303 /* TotalElementCell.h */,
+				E7AC5F5D19F14DB200A8A303 /* TotalElementCell.m */,
 				E7A4AA0F19EF9C5D0081D199 /* ElementCell.h */,
 				E7A4AA1019EF9C5D0081D199 /* ElementCell.m */,
 				E7A4AA0D19EF99F40081D199 /* ElementCell.xib */,
@@ -449,6 +459,7 @@
 				E73829D719EBCEA6000AA7DA /* AppDelegate.h */,
 				E73829D819EBCEA6000AA7DA /* AppDelegate.m */,
 				E73829DD19EBCEA6000AA7DA /* Main.storyboard */,
+				E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */,
 				E73829E019EBCEA6000AA7DA /* Images.xcassets */,
 				E73829D319EBCEA6000AA7DA /* Supporting Files */,
 			);
@@ -583,6 +594,7 @@
 				E7012CFC19EE5105001EBCE0 /* number_bg.png in Resources */,
 				E7012D1019EE5105001EBCE0 /* bg.png in Resources */,
 				E7012CFA19EE5105001EBCE0 /* more_icon.png in Resources */,
+				E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */,
 				E7012CEB19EE5105001EBCE0 /* bg@2x.png in Resources */,
 				E7012D0019EE5105001EBCE0 /* settings_icon.png in Resources */,
 				E7012CD819EE5105001EBCE0 /* off_icon@2x.png in Resources */,
@@ -617,6 +629,7 @@
 				E7012CDD19EE5105001EBCE0 /* thermo_icon@2x.png in Resources */,
 				E7012CED19EE5105001EBCE0 /* loading_line2@2x.png in Resources */,
 				E7012CE019EE5105001EBCE0 /* veric_line@2x.png in Resources */,
+				E7AC5F5B19F14D8200A8A303 /* TotalElements.xib in Resources */,
 				E7012CCA19EE5105001EBCE0 /* bulb_icon@2x.png in Resources */,
 				E7012D0B19EE5105001EBCE0 /* loginbg.png in Resources */,
 				E73829E119EBCEA6000AA7DA /* Images.xcassets in Resources */,
@@ -656,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73829FB19EBD3ED000AA7DA /* DashboardController.m in Sources */,
+				E7AC5F5E19F14DB200A8A303 /* TotalElementCell.m in Sources */,
 				E73829DC19EBCEA6000AA7DA /* LoginViewController.m in Sources */,
 				E7A4AA1119EF9C5D0081D199 /* ElementCell.m in Sources */,
 				E7382A0819ECFC3F000AA7DA /* DashBoardController_iPad.m in Sources */,
@@ -689,6 +703,15 @@
 				E73829DE19EBCEA6000AA7DA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7AC5F5819F11B6700A8A303 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
