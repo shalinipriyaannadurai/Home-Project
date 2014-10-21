@@ -9,6 +9,7 @@
 #import "DashBoardController_iPad.h"
 #import "Client.h"
 #import "ElementCell.h"
+#import "TotalElementCell.h"
 @interface DashBoardController_iPad ()
 @property (nonatomic,retain) UITableView *frequentDevices;
 @property (nonatomic,retain) UITableView *allDevices;
@@ -30,14 +31,12 @@
     frequentDevices.delegate = self;
     frequentDevices.dataSource = self;
     frequentDevices.tag=1;
-    [subView addSubview:frequentDevices];
     
     allDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 160, self.view.frame.size.height, self.view.frame.size.width-210)];
     [allDevices setBackgroundColor:[UIColor clearColor]];
     allDevices.delegate = self;
     allDevices.dataSource = self;
     allDevices.tag=2;
-    [subView addSubview:allDevices];
     [self.view addSubview:indicator];
     
     Client *client = [Client sharedClient];
@@ -49,38 +48,47 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([deviceList count]<1) {
-        return 1;
+        return 10;
     }
     return [deviceList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"Cell";
-    ElementCell *cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        if(tableView.tag==1){
-            cell.frame=CGRectMake(0, 0, 300, 100);
-            cell.transform= CGAffineTransformMakeRotation(M_PI/2);
-        }
-        else{
-        cell.frame=CGRectMake(0, 0, 1024, 100);
-//        for(UIView *tmpView in [cell subviews])
-//            if (tmpView.tag!=1) {
-//                [tmpView setFrame:CGRectMake(tmpView.frame.origin.x, tmpView.frame.origin.y, 1024, tmpView.frame.size.height)];
-//            }
-        }
+    if(tableView.tag==1){
+        static NSString *CellIdentifier = @"Cell";
+        ElementCell *cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
+                }
+        cell.frame=CGRectMake(0, 0, 368, 100);
+        cell.transform= CGAffineTransformMakeRotation(M_PI/2);
         [cell setBackgroundColor:[UIColor clearColor]];
+        if ([deviceList count]>=1) {
+                    cell.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+                    cell.elementDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+                    cell.elementSubDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+                    [cell.elementImage setImage:[UIImage imageNamed:@"bulb_icon.png"]];
+            
+                }
+        return cell;
     }
-    if ([deviceList count]>=1) {
-        cell.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-        cell.elementDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-        cell.elementSubDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-        [cell.elementImage setImage:[UIImage imageNamed:@"bulb_icon.png"]];
-
+    if(tableView.tag==2){
+        static NSString *CellIdentifier = @"TotalCell";
+        TotalElementCell *cell1 = (TotalElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell1 == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
+            cell1 = [nib objectAtIndex:0];
+        }
+        cell1.frame=CGRectMake(0, 0, 1024, 150);
+        [cell1 setBackgroundColor:[UIColor clearColor]];
+        if ([deviceList count]>=1) {
+            cell1.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+            cell1.elementDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+        }
+        return cell1;
     }
 
-    return cell;
+    return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"--------->%ld",(long)indexPath.row);
@@ -93,9 +101,9 @@
     }
 
     if(tableView.tag==1){
-        return 300;
+        return 368;
     }
-    return 100;
+    return 150;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -138,7 +146,8 @@
                                       error: nil];
     NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
     deviceList=[JSON valueForKey:@"result"];
-    [self.view addSubview:subView];
+    [subView addSubview:frequentDevices];
+    [subView addSubview:allDevices];
     [self.frequentDevices reloadData];
     [self.allDevices reloadData];
     [indicator stopAnimating];
