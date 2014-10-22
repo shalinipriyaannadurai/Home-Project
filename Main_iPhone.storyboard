@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eYh-97-GXr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="pez-Oq-yOI">
+            <objects>
+                <viewController id="eYh-97-GXr" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GZd-Fi-Gvl"/>
+                        <viewControllerLayoutGuide type="bottom" id="HP1-U6-Pgu"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="n2G-a6-FID">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Gautham" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-c6-4FJ">
+                                <rect key="frame" x="309" y="317" width="444" height="50"/>
+                                <rect key="contentStretch" x="0.80000000000000016" y="0.39999999999999997" width="1" height="1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GH6-TI-QAh">
+                                <rect key="frame" x="278" y="330" width="23" height="23"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_logo.png" highlightedImage="login_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="LTr-K3-tZP">
+                                <rect key="frame" x="440" y="79" width="144" height="130"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="487" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-1k-p24">
+                                <rect key="frame" x="269" y="217" width="487" height="63"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textField_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-Zb-zCF">
+                                <rect key="frame" x="272" y="426" width="481" height="1"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textField_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-Ku-B7j">
+                                <rect key="frame" x="272" y="368" width="481" height="1"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="key_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="788-MJ-zgN">
+                                <rect key="frame" x="278" y="390" width="23" height="23"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-DE-x7q">
+                                <rect key="frame" x="482" y="479" width="60" height="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unlock_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-ja-BX7">
+                                <rect key="frame" x="499" y="593" width="16" height="20"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dots.png" translatesAutoresizingMaskIntoConstraints="NO" id="8kT-qr-bcg">
+                                <rect key="frame" x="504" y="540" width="6" height="45"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I Don't want to do this now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPi-uJ-NJC">
+                                <rect key="frame" x="360" y="702" width="252" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrl-7F-ibl">
+                                <rect key="frame" x="620" y="691" width="45" height="45"/>
+                                <state key="normal" backgroundImage="play_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  ***********" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iPP-hW-ZEe">
+                                <rect key="frame" x="309" y="377" width="444" height="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="221" y="368" width="444" height="50"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" image="YES"/>
+                        </accessibility>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="362" height="728"/>
+                    <connections>
+                        <outlet property="dotsView" destination="8kT-qr-bcg" id="EAa-x7-J10"/>
+                        <outlet property="swipeUnlock" destination="zWX-DE-x7q" id="Ot7-E9-rS7"/>
+                        <outlet property="unlock" destination="oJF-ja-BX7" id="UGC-Dv-V7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3v4-3T-5Eu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="-479.25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dots.png" width="6" height="45"/>
+        <image name="key_icon.png" width="33" height="40"/>
+        <image name="lock_icon.png" width="45" height="45"/>
+        <image name="login_logo.png" width="144" height="130"/>
+        <image name="play_icon.png" width="45" height="45"/>
+        <image name="textField_line.png" width="481" height="1"/>
+        <image name="unlock_icon.png" width="13" height="17"/>
+        <image name="user_icon.png" width="17" height="16"/>
+    </resources>
+</document>
