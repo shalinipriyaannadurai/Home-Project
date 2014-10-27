@@ -13,11 +13,12 @@
 @interface DashBoardController_iPad ()
 @property (nonatomic,retain) UITableView *frequentDevices;
 @property (nonatomic,retain) UITableView *allDevices;
+@property (nonatomic,retain) NSMutableArray *gropList;
 
 @end
 
 @implementation DashBoardController_iPad
-@synthesize deviceList,frequentDevices,allDevices,indicator,subView;
+@synthesize deviceList,frequentDevices,allDevices,indicator,subView,gropList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -27,12 +28,12 @@
     [frequentDevices setBackgroundColor:[UIColor clearColor]];
     frequentDevices.transform = CGAffineTransformMakeRotation(M_PI/-2);
     frequentDevices.showsVerticalScrollIndicator = NO;
-    frequentDevices.frame = CGRectMake(0, 60, self.view.frame.size.height, 100);
+    frequentDevices.frame = CGRectMake(0, 60, 1024, 100);
     frequentDevices.delegate = self;
     frequentDevices.dataSource = self;
     frequentDevices.tag=1;
     
-    allDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 160, self.view.frame.size.height, self.view.frame.size.width-210)];
+    allDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 160, 1024, 768-210)];
     [allDevices setBackgroundColor:[UIColor clearColor]];
     allDevices.delegate = self;
     allDevices.dataSource = self;
@@ -43,14 +44,29 @@
     client.delegate=self;
     deviceList=[NSDictionary dictionary ];
     [client findSteward];
-    
+    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
+    gropList=[NSMutableArray array];
+    for (NSString *group in [deviceList allKeys]) {
+        if (![gropList containsObject:[group stringByDeletingLastPathComponent]]) {
+            [gropList addObject:[group stringByDeletingLastPathComponent]];
+        }
+    }
+    [subView addSubview:frequentDevices];
+    [subView addSubview:allDevices];
+    [self.frequentDevices reloadData];
+    [self.allDevices reloadData];
+    [indicator stopAnimating];
+    [indicator removeFromSuperview];
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([deviceList count]<1) {
-        return 10;
+        return 1;
     }
+    if(tableView.tag==1)
     return [deviceList count];
+    else
+        return [gropList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView.tag==1){
@@ -64,12 +80,35 @@
         cell.transform= CGAffineTransformMakeRotation(M_PI/2);
         [cell setBackgroundColor:[UIColor clearColor]];
         if ([deviceList count]>=1) {
-                    cell.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-                    cell.elementDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-                    cell.elementSubDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-                    [cell.elementImage setImage:[UIImage imageNamed:@"bulb_icon.png"]];
-            
-                }
+                    cell.elementTitle.text=[[[deviceList allKeys] objectAtIndex:indexPath.row]lastPathComponent];
+                    cell.elementDescription.text=@"This is description";
+                    cell.elementSubDescription.text=@"This is subdescription";
+                    [cell.elementImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",[cell.elementTitle.text lowercaseString]]]];
+            if([cell.elementTitle.text isEqualToString:@"hue"]){
+                cell.elementDescription.text=@"glowing";
+                [cell.statusButton setTitle:@"OFF" forState:UIControlStateNormal];
+                [cell.statusButton setBackgroundColor:[UIColor redColor]];
+                
+            }
+            if([cell.elementTitle.text isEqualToString:@"lifx"]){
+                cell.elementDescription.text=@"glowing";
+                [cell.statusButton setTitle:@"OFF" forState:UIControlStateNormal];
+                [cell.statusButton setBackgroundColor:[UIColor redColor]];
+                
+            }
+            if([cell.elementTitle.text isEqualToString:@"door"]){
+                cell.elementDescription.text=@"The door is locked";
+                [cell.statusButton setTitle:@"OPEN" forState:UIControlStateNormal];
+                [cell.statusButton setBackgroundColor:[UIColor redColor]];
+            }
+            if([cell.elementTitle.text isEqualToString:@"chromecast"]){
+                cell.elementDescription.text=@"The video is paused";
+                cell.elementDescription.textColor=[UIColor redColor];
+                [cell.statusButton setBackgroundColor:[UIColor greenColor]];
+                [cell.statusButton setTitle:@"PLAY" forState:UIControlStateNormal];
+            }
+
+            }
         return cell;
     }
     if(tableView.tag==2){
@@ -81,10 +120,31 @@
         }
         cell1.frame=CGRectMake(0, 0, 1024, 150);
         [cell1 setBackgroundColor:[UIColor clearColor]];
-        if ([deviceList count]>=1) {
-            cell1.elementTitle.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
-            cell1.elementDescription.text=[[deviceList allKeys] objectAtIndex:indexPath.row];
+        if ([gropList count]>=1) {
+            cell1.elementTitle.text=[[gropList objectAtIndex:indexPath.row] lastPathComponent];
+            [cell1.groupIcon setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",[cell1.elementTitle.text lowercaseString]]]];
+            if([cell1.elementTitle.text isEqualToString:@"light"]){
+                cell1.numLabel.text=@"2";
+                cell1.elementDescription.text=@"2 bulbs glowing";
+
+            }
+            if([cell1.elementTitle.text isEqualToString:@"security"]){
+                [cell1.numIcon removeFromSuperview];
+                [cell1.numLabel removeFromSuperview];
+                [cell1.on_offIcon setImage:[UIImage imageNamed:@"on_icon.png"]];
+                cell1.elementDescription.text=@"The door is locked";
+
+            }
+            if([cell1.elementTitle.text isEqualToString:@"video"]){
+                [cell1.numIcon removeFromSuperview];
+                [cell1.numLabel removeFromSuperview];
+                [cell1.on_offIcon setImage:[UIImage imageNamed:@"off_icon.png"]];
+                cell1.elementDescription.text=@"The video is paused";
+                cell1.elementDescription.textColor=[UIColor redColor];
+            }
+
         }
+
         return cell1;
     }
 
@@ -96,16 +156,40 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-
+ 
     if(tableView.tag==1){
         return 368;
     }
     return 150;
 }
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+-(void)viewDidLayoutSubviews
+{
+    if ([allDevices respondsToSelector:@selector(setSeparatorInset:)]) {
+        [allDevices setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([allDevices respondsToSelector:@selector(setLayoutMargins:)]) {
+        [allDevices setLayoutMargins:UIEdgeInsetsZero];
+    }
+    if ([frequentDevices respondsToSelector:@selector(setSeparatorInset:)]) {
+        [frequentDevices setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([frequentDevices respondsToSelector:@selector(setLayoutMargins:)]) {
+        [frequentDevices setLayoutMargins:UIEdgeInsetsZero];
+    }
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -131,9 +215,13 @@
 
 - (void)stewardNotFoundWithError:(NSError *)error {
     NSLog(@"stewardNotFoundWithError: %@", error);
+    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
+    [subView addSubview:frequentDevices];
+    [subView addSubview:allDevices];
+    [self.frequentDevices reloadData];
+    [self.allDevices reloadData];
     [indicator stopAnimating];
-    [indicator removeFromSuperview];
-}
+    [indicator removeFromSuperview];}
 
 -(void)recievedPerformResponse:(NSString *)message {
     NSLog(@"json = %@", message);
@@ -145,7 +233,8 @@
                                     options: NSJSONReadingMutableContainers
                                       error: nil];
     NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
-    deviceList=[JSON valueForKey:@"result"];
+    //deviceList=[JSON valueForKey:@"result"];
+    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
     [subView addSubview:frequentDevices];
     [subView addSubview:allDevices];
     [self.frequentDevices reloadData];
@@ -153,5 +242,10 @@
     [indicator stopAnimating];
     [indicator removeFromSuperview];
 
+}
+- (IBAction)userTapped:(id)sender {
+}
+
+- (IBAction)rulesTapped:(id)sender {
 }
 @end

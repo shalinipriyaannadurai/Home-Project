@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (weak, nonatomic) IBOutlet UIView *subView;
 
+- (IBAction)userTapped:(id)sender;
+- (IBAction)rulesTapped:(id)sender;
 @end

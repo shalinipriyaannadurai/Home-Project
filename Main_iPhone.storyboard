@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HP1-U6-Pgu"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="n2G-a6-FID">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Gautham" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-c6-4FJ">
@@ -92,15 +92,60 @@
             </objects>
             <point key="canvasLocation" x="-140" y="-479.25"/>
         </scene>
+        <!--Root View Controller-->
+        <scene sceneID="H15-qg-5eu">
+            <objects>
+                <tableViewController id="Jgu-T0-cXn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c5w-53-773">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wWt-U2-eVH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wWt-U2-eVH" id="akJ-WJ-CvA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jgu-T0-cXn" id="U4W-A4-vUa"/>
+                            <outlet property="delegate" destination="Jgu-T0-cXn" id="G9K-Xi-aih"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="u4w-kO-bMq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7I-jB-ZfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="-791.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="duI-RH-6bO">
+            <objects>
+                <navigationController id="zQo-Hh-nzb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="navi_bar.png" id="k3B-Oh-wGs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Jgu-T0-cXn" kind="relationship" relationship="rootViewController" id="q3Y-Wg-lOt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6G-0G-dSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="-791.25"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dots.png" width="6" height="45"/>
         <image name="key_icon.png" width="33" height="40"/>
-        <image name="lock_icon.png" width="45" height="45"/>
+        <image name="lock_icon.png" width="60" height="60"/>
         <image name="login_logo.png" width="144" height="130"/>
+        <image name="navi_bar.png" width="320" height="64"/>
         <image name="play_icon.png" width="45" height="45"/>
         <image name="textField_line.png" width="481" height="1"/>
-        <image name="unlock_icon.png" width="13" height="17"/>
-        <image name="user_icon.png" width="17" height="16"/>
+        <image name="unlock_icon.png" width="16" height="20"/>
+        <image name="user_icon.png" width="23" height="23"/>
     </resources>
 </document>

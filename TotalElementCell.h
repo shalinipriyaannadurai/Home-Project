@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *elementDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *on_offIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *numIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *groupIcon;
+@property (weak, nonatomic) IBOutlet UILabel *numLabel;
 @end

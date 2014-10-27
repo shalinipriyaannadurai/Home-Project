@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *elementTitle;
 
 @property (weak, nonatomic) IBOutlet UILabel *elementDescription;
+@property (weak, nonatomic) IBOutlet UIButton *statusButton;
 @property (weak, nonatomic) IBOutlet UILabel *elementSubDescription;
+- (IBAction)statusButtonTapped:(id)sender;
 @end

@@ -20,7 +20,6 @@
     Client *client = [Client sharedClient];
     NSLog(@"Client Library v%@", [Client version]);
     client.debug = YES;
-
     return YES;
 }
 

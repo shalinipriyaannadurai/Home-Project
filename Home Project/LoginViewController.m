@@ -48,6 +48,7 @@
         
     {
              DashBoardController_iPad *svc =[self.storyboard instantiateViewControllerWithIdentifier:@"DashBoardController_iPad"];
+            
              [svc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
              [self presentViewController:svc animated:YES completion:nil];
 
