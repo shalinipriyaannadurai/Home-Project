@@ -10,15 +10,16 @@
 #import "Client.h"
 #import "ElementCell.h"
 #import "TotalElementCell.h"
+#import "ProfileViewController.h"
 @interface DashBoardController_iPad ()
 @property (nonatomic,retain) UITableView *frequentDevices;
 @property (nonatomic,retain) UITableView *allDevices;
-@property (nonatomic,retain) NSMutableArray *gropList;
+@property (nonatomic,retain) NSMutableArray *groupList;
 
 @end
 
 @implementation DashBoardController_iPad
-@synthesize deviceList,frequentDevices,allDevices,indicator,subView,gropList;
+@synthesize deviceList,frequentDevices,allDevices,indicator,subView,groupList;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -45,10 +46,10 @@
     deviceList=[NSDictionary dictionary ];
     [client findSteward];
     deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
-    gropList=[NSMutableArray array];
+    groupList=[NSMutableArray array];
     for (NSString *group in [deviceList allKeys]) {
-        if (![gropList containsObject:[group stringByDeletingLastPathComponent]]) {
-            [gropList addObject:[group stringByDeletingLastPathComponent]];
+        if (![groupList containsObject:[group stringByDeletingLastPathComponent]]) {
+            [groupList addObject:[group stringByDeletingLastPathComponent]];
         }
     }
     [subView addSubview:frequentDevices];
@@ -66,7 +67,7 @@
     if(tableView.tag==1)
     return [deviceList count];
     else
-        return [gropList count];
+        return [groupList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView.tag==1){
@@ -120,8 +121,8 @@
         }
         cell1.frame=CGRectMake(0, 0, 1024, 150);
         [cell1 setBackgroundColor:[UIColor clearColor]];
-        if ([gropList count]>=1) {
-            cell1.elementTitle.text=[[gropList objectAtIndex:indexPath.row] lastPathComponent];
+        if ([groupList count]>=1) {
+            cell1.elementTitle.text=[[groupList objectAtIndex:indexPath.row] lastPathComponent];
             [cell1.groupIcon setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",[cell1.elementTitle.text lowercaseString]]]];
             if([cell1.elementTitle.text isEqualToString:@"light"]){
                 cell1.numLabel.text=@"2";
@@ -215,11 +216,6 @@
 
 - (void)stewardNotFoundWithError:(NSError *)error {
     NSLog(@"stewardNotFoundWithError: %@", error);
-    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
-    [subView addSubview:frequentDevices];
-    [subView addSubview:allDevices];
-    [self.frequentDevices reloadData];
-    [self.allDevices reloadData];
     [indicator stopAnimating];
     [indicator removeFromSuperview];}
 
@@ -234,7 +230,6 @@
                                       error: nil];
     NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
     //deviceList=[JSON valueForKey:@"result"];
-    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
     [subView addSubview:frequentDevices];
     [subView addSubview:allDevices];
     [self.frequentDevices reloadData];
@@ -244,6 +239,8 @@
 
 }
 - (IBAction)userTapped:(id)sender {
+    ProfileViewController *userProfile=[[ProfileViewController alloc]initWithNibName:@"ProfileViewController" bundle:nil];
+    [self presentViewController:userProfile animated:YES completion:nil];
 }
 
 - (IBAction)rulesTapped:(id)sender {

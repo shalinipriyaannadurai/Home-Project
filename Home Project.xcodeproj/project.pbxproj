@@ -103,6 +103,7 @@
 		E7CBDF1719FE208B00129D34 /* lifx_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7CBDF1419FE208B00129D34 /* lifx_icon.png */; };
 		E7CBDF1B19FE511200129D34 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CBDF1919FE511100129D34 /* ProfileViewController.m */; };
 		E7CBDF1C19FE511200129D34 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7CBDF1A19FE511100129D34 /* ProfileViewController.xib */; };
+		E7CBDF1E19FE6E5200129D34 /* profile1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7CBDF1D19FE6E5200129D34 /* profile1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,7 @@
 		E7CBDF1819FE511100129D34 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		E7CBDF1919FE511100129D34 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E7CBDF1A19FE511100129D34 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		E7CBDF1D19FE6E5200129D34 /* profile1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +491,7 @@
 		E73829D319EBCEA6000AA7DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7CBDF1D19FE6E5200129D34 /* profile1.png */,
 				E73829D419EBCEA6000AA7DA /* Info.plist */,
 				E73829D519EBCEA6000AA7DA /* main.m */,
 			);
@@ -606,6 +609,7 @@
 				E7012CE219EE5105001EBCE0 /* dots@2x.png in Resources */,
 				E7012D0819EE5105001EBCE0 /* key_icon.png in Resources */,
 				E7012CE919EE5105001EBCE0 /* unlock_icon@2x.png in Resources */,
+				E7CBDF1E19FE6E5200129D34 /* profile1.png in Resources */,
 				E7012D0719EE5105001EBCE0 /* dots.png in Resources */,
 				E7012CE419EE5105001EBCE0 /* lock_icon@2x.png in Resources */,
 				E7012CDC19EE5105001EBCE0 /* temp_icon@2x.png in Resources */,
