@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF124B111A03567A00F9591D /* DashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124AFF1A03567A00F9591D /* DashboardController.m */; };
+		81C5B6D41A0367E40027427D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C5B6D31A0367E40027427D /* Utility.m */; };
 		AF124B121A03567A00F9591D /* DashBoardController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B011A03567A00F9591D /* DashBoardController_iPad.m */; };
 		AF124B131A03567A00F9591D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B071A03567A00F9591D /* LoginViewController.m */; };
 		AF124B141A03567A00F9591D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B0D1A03567A00F9591D /* ProfileViewController.m */; };
@@ -116,8 +116,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF124AFE1A03567A00F9591D /* DashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardController.h; sourceTree = "<group>"; };
-		AF124AFF1A03567A00F9591D /* DashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardController.m; sourceTree = "<group>"; };
+		81C5B6D21A0367E40027427D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		81C5B6D31A0367E40027427D /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		AF124B001A03567A00F9591D /* DashBoardController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController_iPad.h; sourceTree = "<group>"; };
 		AF124B011A03567A00F9591D /* DashBoardController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController_iPad.m; sourceTree = "<group>"; };
 		AF124B061A03567A00F9591D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -250,6 +250,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81C5B6D11A0367C90027427D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				81C5B6D21A0367E40027427D /* Utility.h */,
+				81C5B6D31A0367E40027427D /* Utility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		AF124AFB1A03562100F9591D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,8 +282,6 @@
 		AF124AFD1A03567A00F9591D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AF124AFE1A03567A00F9591D /* DashboardController.h */,
-				AF124AFF1A03567A00F9591D /* DashboardController.m */,
 				AF124B001A03567A00F9591D /* DashBoardController_iPad.h */,
 				AF124B011A03567A00F9591D /* DashBoardController_iPad.m */,
 			);
@@ -535,6 +542,7 @@
 		E73829D219EBCEA6000AA7DA /* Home Project */ = {
 			isa = PBXGroup;
 			children = (
+				81C5B6D11A0367C90027427D /* Utility */,
 				AF124AFC1A03567A00F9591D /* Dashboard */,
 				AF124B041A03567A00F9591D /* Login */,
 				AF124B0A1A03567A00F9591D /* UserProfile */,
@@ -762,9 +770,9 @@
 				AF124B141A03567A00F9591D /* ProfileViewController.m in Sources */,
 				E73829D919EBCEA6000AA7DA /* AppDelegate.m in Sources */,
 				AF124BC21A0356DE00F9591D /* TotalElementCell.m in Sources */,
+				81C5B6D41A0367E40027427D /* Utility.m in Sources */,
 				AF124B131A03567A00F9591D /* LoginViewController.m in Sources */,
 				AF124BC01A0356DE00F9591D /* ElementCell.m in Sources */,
-				AF124B111A03567A00F9591D /* DashboardController.m in Sources */,
 				E73829D619EBCEA6000AA7DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -908,7 +916,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -928,7 +936,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

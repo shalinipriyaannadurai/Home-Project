@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -95,7 +95,7 @@
         <!--Dash Board Controller i Pad-->
         <scene sceneID="mNd-rP-jcn">
             <objects>
-                <viewController storyboardIdentifier="DashBoardController_iPad" id="dKr-PO-YM5" customClass="DashBoardController_iPad" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoardController" id="dKr-PO-YM5" customClass="DashBoardController_iPad" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBX-uO-hFX"/>
                         <viewControllerLayoutGuide type="bottom" id="etV-Di-Yp6"/>

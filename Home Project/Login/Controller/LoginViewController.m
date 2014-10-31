@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "DashBoardController_iPad.h"
 #import "Client.h"
+#import "Utility.h"
 @interface LoginViewController ()
 @property NSArray *gestureRecognizers;
 @property CGPoint previousLocation;
@@ -41,12 +42,26 @@
     
     self.swipeUnlock.center = touchLocation;
     CGPoint currentPoint = [panGestureRecognizer locationInView:self.view];
-    CGRect hitRect = CGRectMake(499.0, 593.0, 16.0, 20.0);
+    CGRect hitRect = [_unlock frame];
+    
+    
+   NSString *storyboardString = nil;
+   
+   if ([[Utility sharedInstance]isIpad]) {
+       
+       storyboardString = [NSString stringWithFormat:@"Main_iPad"];
+       
+   }
+   else {
+       storyboardString = [NSString stringWithFormat:@"Main_iPhone"];
+   }
+   
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:storyboardString bundle:[NSBundle mainBundle]];
     
     if(CGRectContainsPoint(hitRect, currentPoint))
         
     {
-             DashBoardController_iPad *svc =[self.storyboard instantiateViewControllerWithIdentifier:@"DashBoardController_iPad"];
+             DashBoardController_iPad *svc =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardController"];
             
              [svc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
              [self presentViewController:svc animated:YES completion:nil];
