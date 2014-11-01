@@ -13,7 +13,7 @@
 #import "ProfileViewController.h"
 @interface DashBoardController_iPad ()
 @property (nonatomic,retain) UITableView *frequentDevices;
-@property (nonatomic,retain) UITableView *allDevices;
+@property (nonatomic,retain) IBOutlet UITableView *allDevices;
 @property (nonatomic,retain) NSMutableArray *groupList;
 
 @end
@@ -34,11 +34,11 @@
     frequentDevices.dataSource = self;
     frequentDevices.tag=1;
     
-    allDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 160, 1024, 768-210)];
-    [allDevices setBackgroundColor:[UIColor clearColor]];
-    allDevices.delegate = self;
-    allDevices.dataSource = self;
-    allDevices.tag=2;
+    
+//    [allDevices setBackgroundColor:[UIColor clearColor]];
+//    allDevices.delegate = self;
+//    allDevices.dataSource = self;
+//    allDevices.tag=2;
     [self.view addSubview:indicator];
     
     Client *client = [Client sharedClient];
@@ -53,12 +53,16 @@
         }
     }
     [subView addSubview:frequentDevices];
-    [subView addSubview:allDevices];
+    //[subView addSubview:allDevices];
     [self.frequentDevices reloadData];
     [self.allDevices reloadData];
     [indicator stopAnimating];
     [indicator removeFromSuperview];
 
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    allDevices.frame  = CGRectMake(allDevices.frame.origin.x , 160, allDevices.frame.size.width, 768-210);
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([deviceList count]<1) {
