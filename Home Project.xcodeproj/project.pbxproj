@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8145B61F1A08AD4C00240CDF /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145B61E1A08AD4C00240CDF /* DeviceListViewController.m */; };
+		8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145B6211A08AE8000240CDF /* NetworkManager.m */; };
+		8145B6241A08C1AA00240CDF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */; };
+		8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */; };
 		81C5B6D41A0367E40027427D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C5B6D31A0367E40027427D /* Utility.m */; };
-		AF124B121A03567A00F9591D /* DashBoardController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B011A03567A00F9591D /* DashBoardController_iPad.m */; };
+		AF124B121A03567A00F9591D /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B011A03567A00F9591D /* DashBoardController.m */; };
 		AF124B131A03567A00F9591D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B071A03567A00F9591D /* LoginViewController.m */; };
 		AF124B141A03567A00F9591D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B0D1A03567A00F9591D /* ProfileViewController.m */; };
 		AF124B151A03567A00F9591D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF124B101A03567A00F9591D /* ProfileViewController.xib */; };
@@ -57,8 +61,8 @@
 		AF124C3D1A035B7200F9591D /* settings_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BED1A035B7200F9591D /* settings_icon@2x.png */; };
 		AF124C3E1A035B7200F9591D /* temp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BEE1A035B7200F9591D /* temp_icon.png */; };
 		AF124C3F1A035B7200F9591D /* temp_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BEF1A035B7200F9591D /* temp_icon@2x.png */; };
-		AF124C401A035B7200F9591D /* thermo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF01A035B7200F9591D /* thermo_icon.png */; };
-		AF124C411A035B7200F9591D /* thermo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF11A035B7200F9591D /* thermo_icon@2x.png */; };
+		AF124C401A035B7200F9591D /* thermostat_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF01A035B7200F9591D /* thermostat_icon.png */; };
+		AF124C411A035B7200F9591D /* thermostat_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF11A035B7200F9591D /* thermostat_icon@2x.png */; };
 		AF124C421A035B7200F9591D /* top_navi.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF21A035B7200F9591D /* top_navi.png */; };
 		AF124C431A035B7200F9591D /* top_navi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF31A035B7200F9591D /* top_navi@2x.png */; };
 		AF124C441A035B7200F9591D /* total_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AF124BF41A035B7200F9591D /* total_bg.png */; };
@@ -116,10 +120,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8145B61D1A08AD4C00240CDF /* DeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListViewController.h; sourceTree = "<group>"; };
+		8145B61E1A08AD4C00240CDF /* DeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListViewController.m; sourceTree = "<group>"; };
+		8145B6201A08AE8000240CDF /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		8145B6211A08AE8000240CDF /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementCell_iPhone.xib; sourceTree = "<group>"; };
 		81C5B6D21A0367E40027427D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		81C5B6D31A0367E40027427D /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		AF124B001A03567A00F9591D /* DashBoardController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController_iPad.h; sourceTree = "<group>"; };
-		AF124B011A03567A00F9591D /* DashBoardController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController_iPad.m; sourceTree = "<group>"; };
+		AF124B001A03567A00F9591D /* DashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController.h; sourceTree = "<group>"; };
+		AF124B011A03567A00F9591D /* DashBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardController.m; sourceTree = "<group>"; };
 		AF124B061A03567A00F9591D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AF124B071A03567A00F9591D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AF124B0C1A03567A00F9591D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -172,8 +182,8 @@
 		AF124BED1A035B7200F9591D /* settings_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_icon@2x.png"; sourceTree = "<group>"; };
 		AF124BEE1A035B7200F9591D /* temp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp_icon.png; sourceTree = "<group>"; };
 		AF124BEF1A035B7200F9591D /* temp_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_icon@2x.png"; sourceTree = "<group>"; };
-		AF124BF01A035B7200F9591D /* thermo_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermo_icon.png; sourceTree = "<group>"; };
-		AF124BF11A035B7200F9591D /* thermo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermo_icon@2x.png"; sourceTree = "<group>"; };
+		AF124BF01A035B7200F9591D /* thermostat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermostat_icon.png; sourceTree = "<group>"; };
+		AF124BF11A035B7200F9591D /* thermostat_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermostat_icon@2x.png"; sourceTree = "<group>"; };
 		AF124BF21A035B7200F9591D /* top_navi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_navi.png; sourceTree = "<group>"; };
 		AF124BF31A035B7200F9591D /* top_navi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navi@2x.png"; sourceTree = "<group>"; };
 		AF124BF41A035B7200F9591D /* total_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = total_bg.png; sourceTree = "<group>"; };
@@ -234,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8145B6241A08C1AA00240CDF /* LocalAuthentication.framework in Frameworks */,
 				E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */,
 				E7382A0319EBE595000AA7DA /* libz.dylib in Frameworks */,
 				E73829FD19EBD74C000AA7DA /* libClient.a in Frameworks */,
@@ -250,6 +261,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8145B61B1A08AD2000240CDF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8145B6201A08AE8000240CDF /* NetworkManager.h */,
+				8145B6211A08AE8000240CDF /* NetworkManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8145B61C1A08AD4C00240CDF /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				8145B61D1A08AD4C00240CDF /* DeviceListViewController.h */,
+				8145B61E1A08AD4C00240CDF /* DeviceListViewController.m */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
 		81C5B6D11A0367C90027427D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +291,7 @@
 		AF124AFB1A03562100F9591D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */,
 				E7382A0419EBE5C3000AA7DA /* libicucore.dylib */,
 				E7382A0219EBE595000AA7DA /* libz.dylib */,
 			);
@@ -282,8 +312,8 @@
 		AF124AFD1A03567A00F9591D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AF124B001A03567A00F9591D /* DashBoardController_iPad.h */,
-				AF124B011A03567A00F9591D /* DashBoardController_iPad.m */,
+				AF124B001A03567A00F9591D /* DashBoardController.h */,
+				AF124B011A03567A00F9591D /* DashBoardController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +331,7 @@
 				AF124BBA1A0356DE00F9591D /* ElementCell.h */,
 				AF124BBB1A0356DE00F9591D /* ElementCell.m */,
 				AF124BBC1A0356DE00F9591D /* ElementCell.xib */,
+				8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */,
 				AF124BBD1A0356DE00F9591D /* TotalElementCell.h */,
 				AF124BBE1A0356DE00F9591D /* TotalElementCell.m */,
 				AF124BBF1A0356DE00F9591D /* TotalElements.xib */,
@@ -446,8 +477,8 @@
 				AF124BED1A035B7200F9591D /* settings_icon@2x.png */,
 				AF124BEE1A035B7200F9591D /* temp_icon.png */,
 				AF124BEF1A035B7200F9591D /* temp_icon@2x.png */,
-				AF124BF01A035B7200F9591D /* thermo_icon.png */,
-				AF124BF11A035B7200F9591D /* thermo_icon@2x.png */,
+				AF124BF01A035B7200F9591D /* thermostat_icon.png */,
+				AF124BF11A035B7200F9591D /* thermostat_icon@2x.png */,
 				AF124BF21A035B7200F9591D /* top_navi.png */,
 				AF124BF31A035B7200F9591D /* top_navi@2x.png */,
 				AF124BF41A035B7200F9591D /* total_bg.png */,
@@ -542,6 +573,8 @@
 		E73829D219EBCEA6000AA7DA /* Home Project */ = {
 			isa = PBXGroup;
 			children = (
+				8145B61C1A08AD4C00240CDF /* Devices */,
+				8145B61B1A08AD2000240CDF /* Network */,
 				81C5B6D11A0367C90027427D /* Utility */,
 				AF124AFC1A03567A00F9591D /* Dashboard */,
 				AF124B041A03567A00F9591D /* Login */,
@@ -715,7 +748,7 @@
 				AF124C561A035B7200F9591D /* textField_line.png in Resources */,
 				AF124C571A035B7200F9591D /* textField_line@2x.png in Resources */,
 				AF124BC11A0356DE00F9591D /* ElementCell.xib in Resources */,
-				AF124C411A035B7200F9591D /* thermo_icon@2x.png in Resources */,
+				AF124C411A035B7200F9591D /* thermostat_icon@2x.png in Resources */,
 				AF124C5B1A035B7200F9591D /* user_icon@2x.png in Resources */,
 				AF124C311A035B7200F9591D /* more_icon@2x.png in Resources */,
 				AF124C3B1A035B7200F9591D /* security_icon@2x.png in Resources */,
@@ -730,7 +763,7 @@
 				AF124C231A035B7200F9591D /* home_parts_bg@2x.png in Resources */,
 				E7012C7319EE2A10001EBCE0 /* Main_iPad.storyboard in Resources */,
 				AF124C1E1A035B7200F9591D /* frequen_bg.png in Resources */,
-				AF124C401A035B7200F9591D /* thermo_icon.png in Resources */,
+				AF124C401A035B7200F9591D /* thermostat_icon.png in Resources */,
 				AF124C531A035B7200F9591D /* loginbg@2x.png in Resources */,
 				AF124C431A035B7200F9591D /* top_navi@2x.png in Resources */,
 				AF124C3D1A035B7200F9591D /* settings_icon@2x.png in Resources */,
@@ -742,6 +775,7 @@
 				AF124C1F1A035B7200F9591D /* frequen_bg@2x.png in Resources */,
 				AF124C191A035B7200F9591D /* chromecast_icon.png in Resources */,
 				E73829E119EBCEA6000AA7DA /* Images.xcassets in Resources */,
+				8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */,
 				E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */,
 				AF124C201A035B7200F9591D /* heat_icon.png in Resources */,
 				AF124C351A035B7200F9591D /* number_bg@2x.png in Resources */,
@@ -766,13 +800,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF124B121A03567A00F9591D /* DashBoardController_iPad.m in Sources */,
+				AF124B121A03567A00F9591D /* DashBoardController.m in Sources */,
 				AF124B141A03567A00F9591D /* ProfileViewController.m in Sources */,
 				E73829D919EBCEA6000AA7DA /* AppDelegate.m in Sources */,
 				AF124BC21A0356DE00F9591D /* TotalElementCell.m in Sources */,
 				81C5B6D41A0367E40027427D /* Utility.m in Sources */,
+				8145B61F1A08AD4C00240CDF /* DeviceListViewController.m in Sources */,
 				AF124B131A03567A00F9591D /* LoginViewController.m in Sources */,
 				AF124BC01A0356DE00F9591D /* ElementCell.m in Sources */,
+				8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */,
 				E73829D619EBCEA6000AA7DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -853,7 +889,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -892,7 +928,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "DashBoardController_iPad.h"
+#import "DashBoardController.h"
 #import "Client.h"
 #import "Utility.h"
 @interface LoginViewController ()
@@ -61,10 +61,18 @@
     if(CGRectContainsPoint(hitRect, currentPoint))
         
     {
-             DashBoardController_iPad *svc =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardController"];
+           /*  DashBoardController *svc =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardController"];
             
              [svc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-             [self presentViewController:svc animated:YES completion:nil];
+        
+         NSLog(@"%@--- %@",svc.navigationController,svc.parentViewController);
+             [self presentViewController:svc animated:YES completion:nil];*/
+        
+        UINavigationController *svcNavController =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardParentController"];
+        [svcNavController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        
+        [self presentViewController:svcNavController animated:YES completion:nil];
+        
 
     }
 

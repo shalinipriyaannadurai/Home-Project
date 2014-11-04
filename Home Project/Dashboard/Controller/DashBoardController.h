@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashBoardController_iPad : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface DashBoardController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,retain)NSDictionary *deviceList;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (weak, nonatomic) IBOutlet UIView *subView;

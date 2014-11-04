@@ -6,30 +6,56 @@
 //  Copyright (c) 2014 Shalini Priya A. All rights reserved.
 //
 
-#import "DashBoardController_iPad.h"
+#import "DashBoardController.h"
 #import "Client.h"
 #import "ElementCell.h"
 #import "TotalElementCell.h"
 #import "ProfileViewController.h"
-@interface DashBoardController_iPad ()
-@property (nonatomic,retain) UITableView *frequentDevices;
+#import "Utility.h"
+#import "DeviceListViewController.h"
+#import "NetworkManager.h"
+
+@interface DashBoardController ()
+@property (nonatomic,retain)  UITableView *frequentDevices;
 @property (nonatomic,retain) IBOutlet UITableView *allDevices;
 @property (nonatomic,retain) NSMutableArray *groupList;
+@property(nonatomic,strong) NSString *title;
+
+@property (nonatomic,retain) NSArray *frequentDevicesArray;
+@property (nonatomic,retain) NSArray *allDevicesArray;
+@property (nonatomic,retain)  DeviceListViewController *deviceListViewController;
 
 @end
 
-@implementation DashBoardController_iPad
+@implementation DashBoardController
 @synthesize deviceList,frequentDevices,allDevices,indicator,subView,groupList;
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [indicator startAnimating];
-
-    frequentDevices  = [[UITableView alloc] initWithFrame:self.view.frame];
+    
+    
+if([[Utility sharedInstance] isIpad]){
+    frequentDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 100)];
+}
+else {
+    frequentDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 70)];
+}
     [frequentDevices setBackgroundColor:[UIColor clearColor]];
     frequentDevices.transform = CGAffineTransformMakeRotation(M_PI/-2);
     frequentDevices.showsVerticalScrollIndicator = NO;
-    frequentDevices.frame = CGRectMake(0, 60, 1024, 100);
+    
+    if([[Utility sharedInstance] isIpad]){
+        frequentDevices.frame = CGRectMake(0, 60, self.view.frame.size.width, 100);
+        [subView addSubview:frequentDevices];
+    }
+    else {
+        frequentDevices.frame = CGRectMake(0, 32,  self.view.frame.size.width, 70);
+    }
+
     frequentDevices.delegate = self;
     frequentDevices.dataSource = self;
     frequentDevices.tag=1;
@@ -45,11 +71,12 @@
     client.delegate=self;
     deviceList=[NSDictionary dictionary ];
     [client findSteward];
-    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
+    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Thermostat"],@"device/thermostat/thermostat",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
     groupList=[NSMutableArray array];
     for (NSString *group in [deviceList allKeys]) {
         if (![groupList containsObject:[group stringByDeletingLastPathComponent]]) {
             [groupList addObject:[group stringByDeletingLastPathComponent]];
+            NSLog(@"group is: %@",group);
         }
     }
     [subView addSubview:frequentDevices];
@@ -58,9 +85,37 @@
     [self.allDevices reloadData];
     [indicator stopAnimating];
     [indicator removeFromSuperview];
+    [self getFrequentDevices];
+    [self getAllConnectedDevices];
+   
+    
 
 }
 
+-(void) getAllConnectedDevices{
+     NetworkManager *manager=[[NetworkManager alloc] init];
+    [manager getServerResponseFromURL:[NSURL URLWithString:@"https://itunes.apple.com/search?term=apple&media=software"] withHandler:^(NSArray *responseArray, NSError * error) {
+        
+        if(!error){
+        self.allDevicesArray=responseArray;
+        }
+        else{
+            NSLog(@"Error in response %@",error);
+        }
+    }];
+}
+-(void)getFrequentDevices{
+     NetworkManager *manager=[[NetworkManager alloc] init];
+    [manager getServerResponseFromURL:[NSURL URLWithString:@"https://itunes.apple.com/search?term=apple&media=software"] withHandler:^(NSArray *responseArray, NSError * error) {
+        if(!error){
+            self.frequentDevicesArray=responseArray;
+        }
+        else{
+            NSLog(@"Error in response %@",error);
+        }
+    }];
+
+}
 -(void)viewWillAppear:(BOOL)animated {
     allDevices.frame  = CGRectMake(allDevices.frame.origin.x , 160, allDevices.frame.size.width, 768-210);
 }
@@ -75,15 +130,41 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView.tag==1){
-        static NSString *CellIdentifier = @"Cell";
-        ElementCell *cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell" owner:self options:nil];
-                    cell = [nib objectAtIndex:0];
-                }
-        cell.frame=CGRectMake(0, 0, 368, 100);
+        NSString *CellIdentifier = @"";
+        
+        ElementCell *cell ;
+        
+        if([[Utility sharedInstance] isIpad]){
+            
+            CellIdentifier =  @"ElementCell_iPad";
+            cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            cell.frame=CGRectMake(0, 0, 1024, 100);
+        }
+        else {
+            
+            CellIdentifier = @"ElementCell_iPhone";
+            cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell_iPhone" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            cell.frame=CGRectMake(0, 0, 320, 70);
+        }
+        
+        
+        
+        
+        
+       
+        
         cell.transform= CGAffineTransformMakeRotation(M_PI/2);
-        [cell setBackgroundColor:[UIColor clearColor]];
+       // [cell setBackgroundColor:[UIColor clearColor]];
         if ([deviceList count]>=1) {
                     cell.elementTitle.text=[[[deviceList allKeys] objectAtIndex:indexPath.row]lastPathComponent];
                     cell.elementDescription.text=@"This is description";
@@ -94,6 +175,11 @@
                 [cell.statusButton setTitle:@"OFF" forState:UIControlStateNormal];
                 [cell.statusButton setBackgroundColor:[UIColor redColor]];
                 
+            }
+            if([cell.elementTitle.text isEqualToString:@"thermostat"]){
+                cell.elementDescription.text=@"thermostat is idle";
+                [cell.statusButton setTitle:@"OFF" forState:UIControlStateNormal];
+                [cell.statusButton setBackgroundColor:[UIColor redColor]];
             }
             if([cell.elementTitle.text isEqualToString:@"lifx"]){
                 cell.elementDescription.text=@"glowing";
@@ -119,10 +205,10 @@
     if(tableView.tag==2){
         static NSString *CellIdentifier = @"TotalCell";
         TotalElementCell *cell1 = (TotalElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell1 == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
-            cell1 = [nib objectAtIndex:0];
-        }
+//        if (cell1 == nil) {
+//            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
+//            cell1 = [nib objectAtIndex:0];
+//        }
         cell1.frame=CGRectMake(0, 0, 1024, 150);
         [cell1 setBackgroundColor:[UIColor clearColor]];
         if ([groupList count]>=1) {
@@ -139,6 +225,13 @@
                 [cell1.on_offIcon setImage:[UIImage imageNamed:@"on_icon.png"]];
                 cell1.elementDescription.text=@"The door is locked";
 
+            }
+            if([cell1.elementTitle.text isEqualToString:@"thermostat"]){
+                [cell1.numIcon removeFromSuperview];
+                [cell1.numLabel removeFromSuperview];
+                [cell1.on_offIcon setImage:[UIImage imageNamed:@"on_icon.png"]];
+                cell1.elementDescription.text=@"The thermostat is idle";
+                
             }
             if([cell1.elementTitle.text isEqualToString:@"video"]){
                 [cell1.numIcon removeFromSuperview];
@@ -157,15 +250,46 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"--------->%ld",(long)indexPath.row);
+    NSString *storyboardString = nil;
+    TotalElementCell *selectedCell = (TotalElementCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if ([[Utility sharedInstance]isIpad]) {
+        
+        storyboardString = [NSString stringWithFormat:@"Main_iPad"];
+        
+    }
+    else {
+        storyboardString = [NSString stringWithFormat:@"Main_iPhone"];
+    }
+    
+   // UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:storyboardString bundle:[NSBundle mainBundle]];
+    if(![[Utility sharedInstance] isIpad] &&  tableView.tag==2){
+        
+        NSLog(@"%@",self.navigationController);
+        self.title = selectedCell.elementTitle.text;
+       // [self.navigationController pushViewController:svc animated:YES];
+        
+        [self performSegueWithIdentifier:@"showDeviceList" sender:self];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
  
     if(tableView.tag==1){
+        if ([[Utility sharedInstance] isIpad]) {
         return 368;
+        }
+        else {
+            return 160;
+        }
     }
-    return 150;
+    else if ([[Utility sharedInstance] isIpad]) {
+        return 150;
+    }
+    else{
+        return 89;
+    }
+    
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -200,15 +324,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showDeviceList"]) {
+        DeviceListViewController *deviceListViewController =[segue destinationViewController];
+        deviceListViewController.deviceName= self.title;
+        ///NSDictionary *bulbDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"blub1", nil]
+    }
+    
+    
 }
-*/
+
 
 #pragma mark - Client Delegate Methods
 

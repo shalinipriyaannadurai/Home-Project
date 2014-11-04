@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -45,12 +46,16 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shC-a5-SYM">
-                        <rect key="frame" x="0.0" y="1" width="1024" height="150"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="shC-a5-SYM">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="150"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1024" id="Bc2-r9-DH0"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iD-9j-MJA">
+                        <rect key="frame" x="100" y="1" width="1" height="149"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="shC-a5-SYM" firstAttribute="top" secondItem="z3t-zb-Wzk" secondAttribute="top" id="58O-ok-Qqs"/>
@@ -68,7 +73,7 @@
                 <outlet property="numLabel" destination="il2-8a-Vau" id="MEO-Pe-2Q2"/>
                 <outlet property="on_offIcon" destination="pCA-LY-qJl" id="vUz-3E-XZc"/>
             </connections>
-            <point key="canvasLocation" x="274" y="110"/>
+            <point key="canvasLocation" x="274" y="109"/>
         </tableViewCell>
     </objects>
     <resources>
