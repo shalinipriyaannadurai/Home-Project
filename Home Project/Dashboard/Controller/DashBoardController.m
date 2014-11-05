@@ -49,7 +49,7 @@ else {
     frequentDevices.showsVerticalScrollIndicator = NO;
     
     if([[Utility sharedInstance] isIpad]){
-        frequentDevices.frame = CGRectMake(0, 60, self.view.frame.size.width, 100);
+        frequentDevices.frame = CGRectMake(0, 60, 1024, 100);
         [subView addSubview:frequentDevices];
     }
     else {
@@ -85,8 +85,8 @@ else {
     [self.allDevices reloadData];
     [indicator stopAnimating];
     [indicator removeFromSuperview];
-    [self getFrequentDevices];
-    [self getAllConnectedDevices];
+//    [self getFrequentDevices];
+//    [self getAllConnectedDevices];
    
     
 
@@ -164,7 +164,7 @@ else {
        
         
         cell.transform= CGAffineTransformMakeRotation(M_PI/2);
-       // [cell setBackgroundColor:[UIColor clearColor]];
+        [cell setBackgroundColor:[UIColor clearColor]];
         if ([deviceList count]>=1) {
                     cell.elementTitle.text=[[[deviceList allKeys] objectAtIndex:indexPath.row]lastPathComponent];
                     cell.elementDescription.text=@"This is description";
@@ -360,11 +360,27 @@ else {
     
 }
 -(void)receivedDeviceList:(NSString *)message{
-    NSDictionary *JSON =
+//    NSDictionary *JSON =
+//    [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
+//                                    options: NSJSONReadingMutableContainers
+//                                      error: nil];
+//    NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
+    NSDictionary *json =
     [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
                                     options: NSJSONReadingMutableContainers
                                       error: nil];
-    NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
+    NSMutableDictionary *result=[NSMutableDictionary dictionary];
+    for (NSString *key in [[json valueForKey:@"result"] allKeys]) {
+        if ([key hasPrefix:@"/device/"]==YES && [key hasPrefix:@"/device/gateway/"]==NO ) {
+            NSMutableDictionary *deviceArray=[[json valueForKey:@"result"] valueForKey:key];
+            if ([result valueForKey:[key lastPathComponent]]!=nil) {
+                [deviceArray addEntriesFromDictionary:[result valueForKey:[key lastPathComponent]]];
+            }
+            [result setObject:deviceArray forKey:[key lastPathComponent]];
+        }
+    }
+     NSLog(@"device list1 = %@", [json valueForKey:@"result"]);
+    NSLog(@"device list = %@", result);
     //deviceList=[JSON valueForKey:@"result"];
     [subView addSubview:frequentDevices];
     [subView addSubview:allDevices];

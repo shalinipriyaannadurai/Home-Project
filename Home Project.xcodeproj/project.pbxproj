@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		8145B61F1A08AD4C00240CDF /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145B61E1A08AD4C00240CDF /* DeviceListViewController.m */; };
 		8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145B6211A08AE8000240CDF /* NetworkManager.m */; };
-		8145B6241A08C1AA00240CDF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */; };
 		8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */; };
+		8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		81C5B6D41A0367E40027427D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C5B6D31A0367E40027427D /* Utility.m */; };
 		AF124B121A03567A00F9591D /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B011A03567A00F9591D /* DashBoardController.m */; };
 		AF124B131A03567A00F9591D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B071A03567A00F9591D /* LoginViewController.m */; };
@@ -244,7 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8145B6241A08C1AA00240CDF /* LocalAuthentication.framework in Frameworks */,
+				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
 				E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */,
 				E7382A0319EBE595000AA7DA /* libz.dylib in Frameworks */,
 				E73829FD19EBD74C000AA7DA /* libClient.a in Frameworks */,
@@ -939,6 +939,7 @@
 		E73829F419EBCEA6000AA7DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -959,6 +960,7 @@
 		E73829F519EBCEA6000AA7DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
