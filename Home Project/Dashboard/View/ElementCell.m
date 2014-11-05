@@ -12,6 +12,7 @@
 @synthesize elementImage,elementSubDescription,elementDescription,elementTitle;
 - (void)awakeFromNib {
     // Initialization code
+//    self.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

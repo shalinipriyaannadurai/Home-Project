@@ -45,6 +45,7 @@ else {
     frequentDevices  = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 70)];
 }
     [frequentDevices setBackgroundColor:[UIColor clearColor]];
+    frequentDevices.separatorStyle =UITableViewCellSeparatorStyleNone;
     frequentDevices.transform = CGAffineTransformMakeRotation(M_PI/-2);
     frequentDevices.showsVerticalScrollIndicator = NO;
     
@@ -71,14 +72,14 @@ else {
     client.delegate=self;
     deviceList=[NSDictionary dictionary ];
     [client findSteward];
-    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Thermostat"],@"device/thermostat/thermostat",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
-    groupList=[NSMutableArray array];
-    for (NSString *group in [deviceList allKeys]) {
-        if (![groupList containsObject:[group stringByDeletingLastPathComponent]]) {
-            [groupList addObject:[group stringByDeletingLastPathComponent]];
-            NSLog(@"group is: %@",group);
-        }
-    }
+//    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Thermostat"],@"device/thermostat/thermostat",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
+//    groupList=[NSMutableArray array];
+//    for (NSString *group in [deviceList allKeys]) {
+//        if (![groupList containsObject:[group stringByDeletingLastPathComponent]]) {
+//            [groupList addObject:[group stringByDeletingLastPathComponent]];
+//            NSLog(@"group is: %@",group);
+//        }
+//    }
     [subView addSubview:frequentDevices];
     //[subView addSubview:allDevices];
     [self.frequentDevices reloadData];
@@ -117,7 +118,7 @@ else {
 
 }
 -(void)viewWillAppear:(BOOL)animated {
-    allDevices.frame  = CGRectMake(allDevices.frame.origin.x , 160, allDevices.frame.size.width, 768-210);
+  //  allDevices.frame  = CGRectMake(allDevices.frame.origin.x , 160, allDevices.frame.size.width, 768-210);
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([deviceList count]<1) {
@@ -132,10 +133,11 @@ else {
     if(tableView.tag==1){
         NSString *CellIdentifier = @"";
         
-        ElementCell *cell ;
+        ElementCell *cell;
+        
         
         if([[Utility sharedInstance] isIpad]){
-            
+           // ElementCell *cell;
             CellIdentifier =  @"ElementCell_iPad";
             cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             if (cell == nil) {
@@ -146,9 +148,9 @@ else {
             cell.frame=CGRectMake(0, 0, 1024, 100);
         }
         else {
-            
+           // ElementCell_iPhone *cell;
             CellIdentifier = @"ElementCell_iPhone";
-            cell = (ElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            cell = (ElementCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             if (cell == nil) {
                 
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ElementCell_iPhone" owner:self options:nil];
@@ -205,19 +207,26 @@ else {
     if(tableView.tag==2){
         static NSString *CellIdentifier = @"TotalCell";
         TotalElementCell *cell1 = (TotalElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//        if (cell1 == nil) {
-//            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
-//            cell1 = [nib objectAtIndex:0];
-//        }
+        if (cell1 == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
+            cell1 = [nib objectAtIndex:0];
+        }
         cell1.frame=CGRectMake(0, 0, 1024, 150);
         [cell1 setBackgroundColor:[UIColor clearColor]];
         if ([groupList count]>=1) {
-            cell1.elementTitle.text=[[groupList objectAtIndex:indexPath.row] lastPathComponent];
+            NSString *groupName = [groupList objectAtIndex:indexPath.row];
+            cell1.elementTitle.text= groupName;//[[groupList objectAtIndex:indexPath.row] lastPathComponent];
             [cell1.groupIcon setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",[cell1.elementTitle.text lowercaseString]]]];
-            if([cell1.elementTitle.text isEqualToString:@"light"]){
+//            if([cell1.elementTitle.text isEqualToString:@"light"]){
+//                cell1.numLabel.text=@"2";
+//                cell1.elementDescription.text=@"2 bulbs glowing";
+//
+//            }
+            if([cell1.elementTitle.text isEqualToString:@"bulb"]){
                 cell1.numLabel.text=@"2";
                 cell1.elementDescription.text=@"2 bulbs glowing";
-
+                cell1.elementDescription.textColor=[UIColor redColor];
+                
             }
             if([cell1.elementTitle.text isEqualToString:@"security"]){
                 [cell1.numIcon removeFromSuperview];
@@ -277,10 +286,10 @@ else {
  
     if(tableView.tag==1){
         if ([[Utility sharedInstance] isIpad]) {
-        return 368;
+        return 512;
         }
         else {
-            return 160;
+            return 320;
         }
     }
     else if ([[Utility sharedInstance] isIpad]) {
@@ -291,16 +300,16 @@ else {
     }
     
 }
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
-}
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [cell setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    
+//    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [cell setLayoutMargins:UIEdgeInsetsZero];
+//    }
+//}
 -(void)viewDidLayoutSubviews
 {
     if ([allDevices respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -360,11 +369,8 @@ else {
     
 }
 -(void)receivedDeviceList:(NSString *)message{
-//    NSDictionary *JSON =
-//    [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
-//                                    options: NSJSONReadingMutableContainers
-//                                      error: nil];
-//    NSLog(@"device list = %@", [JSON valueForKey:@"result"]);
+
+    
     NSDictionary *json =
     [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
                                     options: NSJSONReadingMutableContainers
@@ -379,8 +385,24 @@ else {
             [result setObject:deviceArray forKey:[key lastPathComponent]];
         }
     }
-     NSLog(@"device list1 = %@", [json valueForKey:@"result"]);
-    NSLog(@"device list = %@", result);
+
+    
+    
+    deviceList=[NSMutableDictionary dictionaryWithDictionary:result];
+    
+      groupList=[NSMutableArray array];
+    NSLog(@"%@",[deviceList allKeys].description);
+      for (NSString *group in [deviceList allKeys]) {
+         // if (![groupList containsObject:[group stringByDeletingLastPathComponent]]) {
+          //              [groupList addObject:[group stringByDeletingLastPathComponent]];
+           if (![groupList containsObject:group]) {
+              [groupList addObject:group];
+              NSLog(@"group is: %@",group);
+          }
+      }
+    
+    // NSLog(@"device list1 = %@", [json valueForKey:@"result"]);
+    //NSLog(@"device list = %@", result);
     //deviceList=[JSON valueForKey:@"result"];
     [subView addSubview:frequentDevices];
     [subView addSubview:allDevices];
