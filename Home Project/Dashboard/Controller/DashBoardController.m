@@ -344,6 +344,7 @@ else {
     if ([segue.identifier isEqualToString:@"showDeviceList"]) {
         DeviceListViewController *deviceListViewController =[segue destinationViewController];
         deviceListViewController.deviceName= self.title;
+        //deviceListViewController.deviceDetailArray
         ///NSDictionary *bulbDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"blub1", nil]
     }
     
@@ -398,10 +399,12 @@ else {
            if (![groupList containsObject:group]) {
               [groupList addObject:group];
               NSLog(@"group is: %@",group);
+                 NSLog(@"device list1 = %@", [[[deviceList valueForKey:@"video"] valueForKey:@"device/3"] valueForKey:@"name"]);
+               
           }
       }
     
-    // NSLog(@"device list1 = %@", [json valueForKey:@"result"]);
+//     NSLog(@"device list1 = %@", [deviceList valueForKey:@"name"]);
     //NSLog(@"device list = %@", result);
     //deviceList=[JSON valueForKey:@"result"];
     [subView addSubview:frequentDevices];

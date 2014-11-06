@@ -8,6 +8,7 @@
 
 #import "DeviceListViewController.h"
 #import "DashBoardController.h"
+#import "DeviceListingCell.h"
 
 @interface DeviceListViewController ()
 
@@ -48,13 +49,23 @@
            return 3;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cellIdentifier=@"Cell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text=@"Light1";
-    return cell;
+    NSString *cellIdentifier=@"DeviceListingCell";
+    DeviceListingCell *listingCell=(DeviceListingCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (listingCell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DeviceListingCell" owner:self options:nil];
+        listingCell = [nib objectAtIndex:0];
+    }
+     listingCell.frame=CGRectMake(0, 0, 320, 80);
+   listingCell.backgroundColor=[UIColor clearColor];
+    return listingCell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 80;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"DeviceSettings" sender:self];
+}
+
+
 @end

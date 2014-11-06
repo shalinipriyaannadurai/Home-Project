@@ -11,6 +11,10 @@
 		8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145B6211A08AE8000240CDF /* NetworkManager.m */; };
 		8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */; };
 		8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8168A5381A0A8533005943EA /* DeviceListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8168A5371A0A8533005943EA /* DeviceListingCell.xib */; };
+		81B8D1211A0B49E30021CC84 /* DeviceListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1201A0B49E30021CC84 /* DeviceListingCell.m */; };
+		81B8D1231A0B569A0021CC84 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B8D1221A0B569A0021CC84 /* back.png */; };
+		81B8D1281A0B58040021CC84 /* DeviceSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1271A0B58040021CC84 /* DeviceSettingsController.m */; };
 		81C5B6D41A0367E40027427D /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C5B6D31A0367E40027427D /* Utility.m */; };
 		AF124B121A03567A00F9591D /* DashBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B011A03567A00F9591D /* DashBoardController.m */; };
 		AF124B131A03567A00F9591D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF124B071A03567A00F9591D /* LoginViewController.m */; };
@@ -126,6 +130,12 @@
 		8145B6211A08AE8000240CDF /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		8145B6281A08FA4700240CDF /* ElementCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementCell_iPhone.xib; sourceTree = "<group>"; };
+		8168A5371A0A8533005943EA /* DeviceListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceListingCell.xib; sourceTree = "<group>"; };
+		81B8D11F1A0B49E30021CC84 /* DeviceListingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListingCell.h; sourceTree = "<group>"; };
+		81B8D1201A0B49E30021CC84 /* DeviceListingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListingCell.m; sourceTree = "<group>"; };
+		81B8D1221A0B569A0021CC84 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		81B8D1261A0B58040021CC84 /* DeviceSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSettingsController.h; sourceTree = "<group>"; };
+		81B8D1271A0B58040021CC84 /* DeviceSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSettingsController.m; sourceTree = "<group>"; };
 		81C5B6D21A0367E40027427D /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		81C5B6D31A0367E40027427D /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		AF124B001A03567A00F9591D /* DashBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardController.h; sourceTree = "<group>"; };
@@ -273,10 +283,46 @@
 		8145B61C1A08AD4C00240CDF /* Devices */ = {
 			isa = PBXGroup;
 			children = (
+				8168A5331A0A846D005943EA /* Controller */,
+				8168A5321A0A8460005943EA /* Modal */,
+				8168A5311A0A844B005943EA /* View */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		8168A5311A0A844B005943EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8168A5371A0A8533005943EA /* DeviceListingCell.xib */,
+				81B8D11F1A0B49E30021CC84 /* DeviceListingCell.h */,
+				81B8D1201A0B49E30021CC84 /* DeviceListingCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8168A5321A0A8460005943EA /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		8168A5331A0A846D005943EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				8145B61D1A08AD4C00240CDF /* DeviceListViewController.h */,
 				8145B61E1A08AD4C00240CDF /* DeviceListViewController.m */,
 			);
-			path = Devices;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		81B8D1251A0B57DE0021CC84 /* DeviceSettings */ = {
+			isa = PBXGroup;
+			children = (
+				81B8D1261A0B58040021CC84 /* DeviceSettingsController.h */,
+				81B8D1271A0B58040021CC84 /* DeviceSettingsController.m */,
+			);
+			path = DeviceSettings;
 			sourceTree = "<group>";
 		};
 		81C5B6D11A0367C90027427D /* Utility */ = {
@@ -487,6 +533,7 @@
 				AF124BF71A035B7200F9591D /* veric_line@2x.png */,
 				AF124BF81A035B7200F9591D /* video_icon.png */,
 				AF124BF91A035B7200F9591D /* video_icon@2x.png */,
+				81B8D1221A0B569A0021CC84 /* back.png */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -573,6 +620,7 @@
 		E73829D219EBCEA6000AA7DA /* Home Project */ = {
 			isa = PBXGroup;
 			children = (
+				81B8D1251A0B57DE0021CC84 /* DeviceSettings */,
 				8145B61C1A08AD4C00240CDF /* Devices */,
 				8145B61B1A08AD2000240CDF /* Network */,
 				81C5B6D11A0367C90027427D /* Utility */,
@@ -706,6 +754,7 @@
 				AF124C511A035B7200F9591D /* login_logo@2x.png in Resources */,
 				AF124C601A035B7200F9591D /* loading_line2.png in Resources */,
 				AF124C331A035B7200F9591D /* music_icon@2x.png in Resources */,
+				81B8D1231A0B569A0021CC84 /* back.png in Resources */,
 				AF124BC31A0356DE00F9591D /* TotalElements.xib in Resources */,
 				AF124C491A035B7200F9591D /* video_icon@2x.png in Resources */,
 				AF124C5A1A035B7200F9591D /* user_icon.png in Resources */,
@@ -746,6 +795,7 @@
 				AF124C4D1A035B7200F9591D /* key_icon@2x.png in Resources */,
 				AF124C2F1A035B7200F9591D /* moisture_icon@2x.png in Resources */,
 				AF124C561A035B7200F9591D /* textField_line.png in Resources */,
+				8168A5381A0A8533005943EA /* DeviceListingCell.xib in Resources */,
 				AF124C571A035B7200F9591D /* textField_line@2x.png in Resources */,
 				AF124BC11A0356DE00F9591D /* ElementCell.xib in Resources */,
 				AF124C411A035B7200F9591D /* thermostat_icon@2x.png in Resources */,
@@ -805,10 +855,12 @@
 				E73829D919EBCEA6000AA7DA /* AppDelegate.m in Sources */,
 				AF124BC21A0356DE00F9591D /* TotalElementCell.m in Sources */,
 				81C5B6D41A0367E40027427D /* Utility.m in Sources */,
+				81B8D1211A0B49E30021CC84 /* DeviceListingCell.m in Sources */,
 				8145B61F1A08AD4C00240CDF /* DeviceListViewController.m in Sources */,
 				AF124B131A03567A00F9591D /* LoginViewController.m in Sources */,
 				AF124BC01A0356DE00F9591D /* ElementCell.m in Sources */,
 				8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */,
+				81B8D1281A0B58040021CC84 /* DeviceSettingsController.m in Sources */,
 				E73829D619EBCEA6000AA7DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
