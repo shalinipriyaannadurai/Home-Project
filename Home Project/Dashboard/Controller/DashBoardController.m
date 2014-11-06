@@ -14,6 +14,7 @@
 #import "Utility.h"
 #import "DeviceListViewController.h"
 #import "NetworkManager.h"
+#import "HPDevice.h"
 
 @interface DashBoardController ()
 @property (nonatomic,retain)  UITableView *frequentDevices;
@@ -72,6 +73,7 @@ else {
     client.delegate=self;
     deviceList=[NSDictionary dictionary ];
     [client findSteward];
+    [client startMonitoringEvents];
 //    deviceList=[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"Door"],@"device/security/door",[NSArray arrayWithObject:@"Thermostat"],@"device/thermostat/thermostat",[NSArray arrayWithObject:@"Hue"],@"device/light/hue",[NSArray arrayWithObject:@"Lifx"],@"device/light/lifx",[NSArray arrayWithObject:@"Chromecast"], @"device/video/chromecast",nil];
 //    groupList=[NSMutableArray array];
 //    for (NSString *group in [deviceList allKeys]) {
@@ -372,7 +374,7 @@ else {
 -(void)receivedDeviceList:(NSString *)message{
 
     
-    NSDictionary *json =
+   /* NSDictionary *json =
     [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
                                     options: NSJSONReadingMutableContainers
                                       error: nil];
@@ -406,7 +408,57 @@ else {
     
 //     NSLog(@"device list1 = %@", [deviceList valueForKey:@"name"]);
     //NSLog(@"device list = %@", result);
-    //deviceList=[JSON valueForKey:@"result"];
+    //deviceList=[JSON valueForKey:@"result"];*/
+    
+    
+        NSDictionary *json =
+        [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
+                                        options: NSJSONReadingMutableContainers
+                                          error: nil];
+        NSMutableDictionary *jsonResult=[NSMutableDictionary dictionary];
+        for (NSString *key in [[json valueForKey:@"result"] allKeys]) {
+            if ([key hasPrefix:@"/device/"]==YES && [key hasPrefix:@"/device/gateway/"]==NO ) {
+                NSMutableDictionary *deviceArray=[[json valueForKey:@"result"] valueForKey:key];
+                if ([jsonResult valueForKey:[key lastPathComponent]]!=nil) {
+                    [deviceArray addEntriesFromDictionary:[jsonResult valueForKey:[key lastPathComponent]]];
+                }
+                [jsonResult setObject:deviceArray forKey:[key lastPathComponent]];
+            }
+        }
+        NSLog(@"device list = %@", jsonResult);
+        NSMutableDictionary *listOFDevices=[NSMutableDictionary dictionary];
+        for (NSString *key in [jsonResult allKeys]) {
+            if ([key isEqualToString:@"bulb"]==YES) {
+                [listOFDevices setObject:[NSMutableArray array] forKey:@"bulb"];
+                for (NSString *deviceId in [[jsonResult valueForKey:@"bulb"] allKeys]){
+                    NSDictionary *jsonBulb=[[jsonResult valueForKey:@"bulb"] valueForKey:deviceId];
+                    HPBulb *bulb=[[HPBulb alloc]init];
+                    bulb.deviceId=deviceId;
+                    bulb.name=[jsonBulb valueForKey:@"name"];
+                    bulb.status=[jsonBulb valueForKey:@"status"];
+                    if ([bulb.status isEqualToString:@"waiting"])
+                        bulb.status=@"off";
+                    bulb.brightness=[[[jsonBulb valueForKey:@"info"] valueForKey:@"brightness"] floatValue];
+                    [[listOFDevices valueForKey:@"bulb"] addObject:bulb];
+                }
+            }
+            if ([key isEqualToString:@"video"]==YES) {
+                [listOFDevices setObject:[NSMutableArray array] forKey:@"video"];
+                for (NSString *deviceId in [[jsonResult valueForKey:@"video"] allKeys]){
+                    NSDictionary *jsonVideo=[[jsonResult valueForKey:@"video"] valueForKey:deviceId];
+                    HPVideo *video=[[HPVideo alloc]init];
+                    video.deviceId=deviceId;
+                    video.name=[jsonVideo valueForKey:@"name"];
+                    video.status=[jsonVideo valueForKey:@"status"];
+                    video.position=[[[jsonVideo valueForKey:@"info"] valueForKey:@"position"]floatValue ];
+                    video.duration=[[[jsonVideo valueForKey:@"info"] valueForKey:@"duration"]floatValue ];
+                    video.url=[[jsonVideo valueForKey:@"info"] valueForKey:@"url"];
+                    [[listOFDevices valueForKey:@"video"] addObject:video];
+                }
+            }
+            
+        }
+
     [subView addSubview:frequentDevices];
     [subView addSubview:allDevices];
     [self.frequentDevices reloadData];
@@ -414,6 +466,49 @@ else {
     [indicator stopAnimating];
     [indicator removeFromSuperview];
 
+}
+-(void)receivedEventMessage:(NSString *)message{
+    NSDictionary *json =
+    [NSJSONSerialization JSONObjectWithData: [message dataUsingEncoding:NSUTF8StringEncoding]
+                                    options: NSJSONReadingMutableContainers
+                                      error: nil];
+    NSMutableDictionary *listOfDevices=[NSMutableDictionary dictionary];
+    if ([json valueForKey:@".updates"]!=nil && [[json valueForKey:@".updates"] count]!=0) {
+        for (NSDictionary *keyValue in [json valueForKey:@".updates"]) {
+            if ([keyValue valueForKey:@"whatami"]!=nil && [keyValue valueForKey:@"whoami"]!=nil) {
+                NSString *group=[keyValue valueForKey:@"whatami"];
+                if ([group hasPrefix:@"/device/"]==YES && [group hasPrefix:@"/device/gateway/"]==NO ) {
+                    if ([[group lastPathComponent] isEqualToString:@"bulb"]==YES) {
+                        [listOfDevices setObject:[NSMutableArray array] forKey:@"bulb"];
+                        HPBulb *bulb=[[HPBulb alloc]init];
+                        bulb.deviceId=[keyValue valueForKey:@"whoami"];
+                        bulb.name=[keyValue valueForKey:@"name"];
+                        bulb.status=[keyValue valueForKey:@"status"];
+                        if ([bulb.status isEqualToString:@"waiting"])
+                            bulb.status=@"off";
+                        bulb.brightness=[[[keyValue valueForKey:@"info"] valueForKey:@"brightness"] floatValue];
+                        [[listOfDevices valueForKey:@"bulb"] addObject:bulb];
+                        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"bulb" message:[NSString stringWithFormat:@"Status :   %@",bulb.status] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        [alert show];
+                    }
+                    if ([[group lastPathComponent] isEqualToString:@"video"]==YES) {
+                        [listOfDevices setObject:[NSMutableArray array] forKey:@"bulb"];
+                        HPVideo *video=[[HPVideo alloc]init];
+                        video.deviceId=[keyValue valueForKey:@"whoami"];
+                        video.name=[keyValue valueForKey:@"name"];
+                        video.status=[keyValue valueForKey:@"status"];
+                        video.position=[[[keyValue valueForKey:@"info"] valueForKey:@"position"]floatValue ];
+                        video.duration=[[[keyValue valueForKey:@"info"] valueForKey:@"duration"]floatValue ];
+                        video.url=[[keyValue valueForKey:@"info"] valueForKey:@"url"];
+                        [[listOfDevices valueForKey:@"bulb"] addObject:video];
+                        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"video" message:[NSString stringWithFormat:@"Status :   %@",video.status] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        [alert show];
+                    }
+                }
+            }
+        }
+    }
+    NSLog(@"device list = %@", ((HPBulb *)[[listOfDevices valueForKey:@"bulb"] objectAtIndex:0]).status);
 }
 - (IBAction)userTapped:(id)sender {
     ProfileViewController *userProfile=[[ProfileViewController alloc]initWithNibName:@"ProfileViewController" bundle:nil];
