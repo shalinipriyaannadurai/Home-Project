@@ -32,7 +32,7 @@
 
 #import "SRWebSocket.h"
 
-#define LIBRARY_VERSION @"0.1.1"
+#define LIBRARY_VERSION @"0.5.1"
 #define ISO_TIMEZONE_UTC_FORMAT @"Z"
 #define ISO_TIMEZONE_OFFSET_FORMAT @"+%02d%02d"
 
@@ -46,6 +46,10 @@
 
 @optional
 - (void)stewardNotFoundWithError:(NSError *)error;
+- (void)stewardFoundAtService:(NSNetService *)service;
+- (void)stewardDidStopSearching;
+- (void)stewardNotSearchedWithErrorDict:(NSDictionary *)errorDict;
+- (void)stewardNotResolvedWithErrorDict:(NSDictionary *)errorDict;
 
 @end
 
@@ -67,7 +71,12 @@
 @protocol MonitorDelegate <NSObject>
 
 @required
-- (void)recievedEventMessage:(NSString *)message;
+- (void)receivedEventMessage:(NSString *)message;
+
+@optional
+- (void)startedMonitoring;
+- (void)monitoringFailedWithError:(NSError *)error;
+- (void)monitoringClosedWithCode:(NSInteger)code;
 
 @end
 
@@ -78,6 +87,8 @@
 @property (nonatomic, strong) SRWebSocket *webSocket;
 
 - (id)initWithAddress:(NSString *)ipAddress;
+- (id)initWithAddress:(NSString *)ipAddress andPort:(long)port;
+- (id)initWithURLRequest:(NSURLRequest *)request;
 - (void)startMonitoringEvents;
 - (void)stopMonitoringEvents;
 
@@ -92,6 +103,11 @@
 @required
 - (void)receivedDeviceList:(NSString *)message;
 
+@optional
+- (void)startedListing;
+- (void)listingFailedWithError:(NSError *)error;
+- (void)listingClosedWithCode:(NSInteger)code;
+
 @end
 
 @interface Devices : NSObject <SRWebSocketDelegate>
@@ -99,8 +115,17 @@
 @property (nonatomic, weak) id <DevicesDelegate> delegate;
 @property (nonatomic, strong) SRWebSocket *webSocket;
 
+@property (nonatomic) BOOL oneShotP;
+@property (nonatomic) BOOL opened;
+
+
 - (id)initWithAddress:(NSString *)ipAddress;
-- (void)listAllDevices;
+- (id)initWithAddress:(NSString *)ipAddress andPort:(long)port;
+- (id)initWithURLRequest:(NSURLRequest *)request;
+- (NSUInteger)listAllDevices;
+- (NSUInteger)listAllActivities;
+- (BOOL)roundTrip:(NSString *)json;
+- (void)stopListingDevices;
 
 @end
 
@@ -110,7 +135,7 @@
 @protocol PerformDelegate <NSObject>
 
 @required
-- (void)recievedPerformResponse:(NSString *)message;
+- (void)receivedPerformResponse:(NSString *)message;
 
 @end
 
@@ -124,9 +149,11 @@
 @property (nonatomic, strong) NSString *parameters;
 @property (nonatomic) BOOL authenticate;
 @property (nonatomic) BOOL opened;
+@property (nonatomic) BOOL followup;
 
 
 - (id)initWithAddress:(NSString *)ipAddress;
+- (id)initWithAddress:(NSString *)ipAddress andPort:(long)port;
 - (void)performWithDevice:(NSString *)device andRequest:(NSString *)request andParameters:(NSString *)parameters;
 
 @end
@@ -139,14 +166,21 @@
 
 @optional
 - (void)stewardNotFoundWithError:(NSError *)error;
+- (void)stewardDidStopSearching;
+- (void)stewardNotSearchedWithErrorDict:(NSDictionary *)errorDict;
+- (void)stewardNotResolvedWithErrorDict:(NSDictionary *)errorDict;
+- (void)stewardFoundAtService:(NSNetService *)service;
 - (void)stewardFoundWithAddress:(NSString *)ipAddress;
-- (void)recievedEventMessage:(NSString *)message;
+- (void)receivedEventMessage:(NSString *)message;
 - (void)receivedDeviceList:(NSString *)message;
-- (void)recievedPerformResponse:(NSString *)message;
+- (void)receivedPerformResponse:(NSString *)message;
 
 @end
 
-@interface Client : NSObject <StewardDelegate, MonitorDelegate, DevicesDelegate, PerformDelegate>
+@interface Client : NSObject <StewardDelegate, MonitorDelegate, DevicesDelegate, PerformDelegate> {
+    
+    NSURL *authURL;
+}
 
 @property (nonatomic, weak) id <ClientDelegate> delegate;
 
@@ -155,13 +189,19 @@
 @property (nonatomic, strong) Devices *devices;
 @property (nonatomic, strong) Perform *perform;
 @property (nonatomic) BOOL debug;
-@property (nonatomic) int requestCounter;
+@property (nonatomic) NSUInteger requestCounter;
 
+@property (nonatomic) BOOL authenticate;
 @property (nonatomic, strong) NSString *secret;
 @property (nonatomic, strong) NSString *clientID;
+@property (nonatomic, strong) NSString *stewardID;
+@property (nonatomic, strong) NSURL *authURL;
 
 + (Client *)sharedClient;
 + (NSString *)version;
+
+- (NSURL *)authURL;
+- (void)setAuthURL:(NSURL *)url;
 
 - (void)findSteward;
 
@@ -201,3 +241,16 @@
 
 @end
 
+
+@interface NSNetService(ipAddresses)
+
+- (NSArray *)ipAddresses;
+
+@end
+
+
+@interface NSURL(queryDictionary)
+
+- (NSMutableDictionary *)queryDictionary;
+
+@end

@@ -7,6 +7,8 @@
 //
 
 #import "DeviceSettingsController.h"
+#import "Client.h"
+#import "HPDevice.h"
 
 @interface DeviceSettingsController ()
 
@@ -15,6 +17,10 @@
 @implementation DeviceSettingsController
 
 - (void)viewDidLoad {
+    _deviceNameLabel.text=_device.name;
+    _brightnessLabel.text=_brightness;
+    _deviceId=_device.deviceId;
+    _slider.value=[_brightness integerValue];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -36,5 +42,29 @@
 
 - (IBAction)backButtonClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)sliderValueChanged:(id)sender {
+    NSString *request;
+    UISlider *slider = (UISlider *) sender;
+    int progressAsInt =(int)(slider.value + 0.5f);
+    NSString *newText =[[NSString alloc]
+                        initWithFormat:@"%d%%",progressAsInt];
+    self.brightnessLabel.text=newText;
+    _brightness=self.brightnessLabel.text ;
+    //request = @"on";
+
+    _device.brightness=[_brightness integerValue];
+    if(_device.brightness==0){
+        _device.status=@"off";
+        request = @"off";
+    }else{
+        _device.status=@"on";
+        request = @"on";
+    }
+    NSString *device = [NSString stringWithFormat:@"/api/v1/device/perform/%@",[_deviceId lastPathComponent]];
+        NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %d}",[_brightness intValue]];
+    [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];
+   
 }
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DeviceListingCell.h"
+#import "Client.h"
 
 @implementation DeviceListingCell
 
@@ -20,4 +21,8 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)switchValueChanged:(id)sender {
+    
+    [_delegate switchDeviceState:_deviceId forDevBrightness:_brightness.text withSwitchState:_onOffSwitch.on];
+   }
 @end
