@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *numIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *groupIcon;
 @property (weak, nonatomic) IBOutlet UILabel *numLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *cellOverlayImageView;
 @end
