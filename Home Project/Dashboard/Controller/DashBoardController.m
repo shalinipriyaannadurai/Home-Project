@@ -212,11 +212,11 @@
     if(tableView.tag==2){
         static NSString *CellIdentifier = @"TotalCell";
         TotalElementCell *cell1 = (TotalElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell1 == nil) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
-            cell1 = [nib objectAtIndex:0];
-        }
-        cell1.frame=CGRectMake(0, 0, 1024, 150);
+//        if (cell1 == nil) {
+//            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TotalElements" owner:self options:nil];
+//            cell1 = [nib objectAtIndex:0];
+//        }
+       // cell1.frame=CGRectMake(0, 0, 1024, 150);
         [cell1 setBackgroundColor:[UIColor clearColor]];
         if ([groupList count]>=1) {
             NSString *groupName = [groupList objectAtIndex:indexPath.row];
@@ -295,7 +295,7 @@
             return 512;
         }
         else {
-            return 320;
+            return self.view.frame.size.width;
         }
     }
     else if ([[Utility sharedInstance] isIpad]) {

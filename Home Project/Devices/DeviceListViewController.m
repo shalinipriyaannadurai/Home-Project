@@ -73,7 +73,7 @@
         listingCell = [nib objectAtIndex:0];
         listingCell.delegate=self;
     }
-     listingCell.frame=CGRectMake(0, 0, 320, 80);
+     listingCell.frame=CGRectMake(0, 0, self.view.frame.size.width, 80);
    listingCell.backgroundColor=[UIColor clearColor];
     listingCell.txtBrightness.hidden=FALSE;
     if([_groupName isEqualToString: @"bulb"]){

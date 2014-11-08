@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Client.h"
+#import "LocalAuthentication/LocalAuthentication.h"
+#import "Utility.h"
 @interface AppDelegate ()
 
 @end
@@ -20,9 +22,42 @@
     Client *client = [Client sharedClient];
     NSLog(@"Client Library v%@", [Client version]);
     client.debug = YES;
+    [self authenticateUser];
     return YES;
 }
-
+-(void)authenticateUser{
+    NSString *storyboardString = nil;
+    
+    if ([[Utility sharedInstance]isIpad]) {
+        
+        storyboardString = [NSString stringWithFormat:@"Main_iPad"];
+        
+    }
+    else {
+        storyboardString = [NSString stringWithFormat:@"Main_iPhone"];
+    }
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:storyboardString bundle:[NSBundle mainBundle]];
+    LAContext *context = [[LAContext alloc] init];
+    __block  NSString *msg;
+    NSString *reasonString = @"Authentication is needed to access your app";
+    
+    [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:reasonString reply:
+     ^(BOOL success, NSError *authenticationError) {
+         if (success) {
+             msg =@"Success";
+             UINavigationController *svcNavController =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardParentController"];
+             [svcNavController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+             
+             [self.window setRootViewController:svcNavController ];
+             
+         } else {
+             msg = [NSString stringWithFormat:@"Fail with reason %@", authenticationError.localizedDescription];
+         }
+         // [self printResult:self.textView message:msg];
+     }];
+    
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

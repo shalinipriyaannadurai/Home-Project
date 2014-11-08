@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,8 +19,12 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-M6-B7H">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-M6-B7H">
                         <rect key="frame" x="259" y="40" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="Zx2-g2-wca"/>
+                            <constraint firstAttribute="height" constant="31" id="bqZ-dU-vsc"/>
+                        </constraints>
                         <connections>
                             <action selector="switchValueChanged:" destination="Rzs-3O-2n5" eventType="valueChanged" id="2bc-S9-y94"/>
                         </connections>
@@ -34,9 +38,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bulb_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvW-d8-Qpd">
                         <rect key="frame" x="13" y="16" width="40" height="48"/>
                     </imageView>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-dq-qmT">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-dq-qmT">
                         <rect key="frame" x="0.0" y="79" width="320" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="trd-RS-hdb"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="83%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz4-6P-QsQ">
                         <rect key="frame" x="222" y="8" width="94" height="19"/>
@@ -45,6 +52,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="6Pq-dq-qmT" firstAttribute="top" secondItem="wrh-M6-B7H" secondAttribute="bottom" constant="8" id="U3i-pb-0Y5"/>
+                    <constraint firstItem="6Pq-dq-qmT" firstAttribute="leading" secondItem="a7O-h3-Oph" secondAttribute="leading" id="lGk-jI-CRq"/>
+                    <constraint firstAttribute="trailing" secondItem="wrh-M6-B7H" secondAttribute="trailing" constant="12" id="mZS-NX-Hly"/>
+                    <constraint firstAttribute="bottom" secondItem="6Pq-dq-qmT" secondAttribute="bottom" constant="1" id="tyA-0B-jVC"/>
+                    <constraint firstAttribute="trailing" secondItem="6Pq-dq-qmT" secondAttribute="trailing" id="uTY-12-E42"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>

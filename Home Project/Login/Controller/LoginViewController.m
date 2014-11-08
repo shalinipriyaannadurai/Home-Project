@@ -13,6 +13,7 @@
 @interface LoginViewController ()
 @property NSArray *gestureRecognizers;
 @property CGPoint previousLocation;
+@property (weak, nonatomic) IBOutlet UIView *swipeControlBAseView;
 @end
 
 @implementation LoginViewController
@@ -38,10 +39,10 @@
 
 -(void)handleSwipeToUnlock:(UIPanGestureRecognizer *)panGestureRecognizer {
 
-    CGPoint touchLocation = [panGestureRecognizer locationInView:self.view];
+    CGPoint touchLocation = [panGestureRecognizer locationInView:self.swipeControlBAseView];
     
     self.swipeUnlock.center = touchLocation;
-    CGPoint currentPoint = [panGestureRecognizer locationInView:self.view];
+    CGPoint currentPoint = [panGestureRecognizer locationInView:self.swipeControlBAseView];
     CGRect hitRect = [_unlock frame];
     
     
