@@ -391,7 +391,7 @@
         
         [self performSegueWithIdentifier:@"showDeviceList" sender:self];
         
-        [tableView deselectRowAtIndexPath:indexPath animated:YES]
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         //        if ((indexPath.row==3) || (indexPath.row == 2)) {
         //            [tableView deselectRowAtIndexPath:indexPath animated:YES];
         //        }

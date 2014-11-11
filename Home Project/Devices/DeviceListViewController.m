@@ -56,12 +56,6 @@
 }
 
 
-- (void)deviceStateUpdated
-{
-    [self.deviceListingTable reloadData];
-    
-}
-
 
 - (IBAction)backButtonClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
