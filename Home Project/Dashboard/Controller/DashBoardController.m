@@ -106,8 +106,9 @@
     [indicator removeFromSuperview];
     //    [self getFrequentDevices];
     //    [self getAllConnectedDevices];
-//    self.allDevices.hidden = YES;
-//    self.frequentDevices.hidden = YES;
+    
+    self.allDevices.hidden = YES;
+    self.frequentDevices.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceStateUpdated) name:@"DeviceUpdateNotification" object:nil];
 }
@@ -145,21 +146,19 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated {
-    //LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
-
     
     [allDevices reloadData];
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    if ([deviceList count]<1) {
-//        return 1;
-//    }
+    //    if ([deviceList count]<1) {
+    //        return 1;
+    //    }
     if(tableView.tag==1)
-        return [deviceList count];
+    return [deviceList count];
     else
-        //return [groupList count];
-        return 4;
+    //return [groupList count];
+    return 4;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView.tag==1){
@@ -240,14 +239,14 @@
         static NSString *CellIdentifier = @"TotalCell";
         TotalElementCell *cell = (TotalElementCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         [cell setBackgroundColor:[UIColor clearColor]];
-
+        
         
         switch (indexPath.row) {
             case 0:
             {
                 NSArray *list=[deviceList valueForKey:@"bulb"];
                 
-
+                
                 NSString *groupName = @"Lights";
                 cell.elementTitle.text= groupName;
                 
@@ -258,20 +257,20 @@
                 cell.elementDescription.textColor=[UIColor redColor];
                 [cell.numIcon setHidden:YES];
                 [cell.numLabel setHidden:YES];
-
+                
                 if ([list count]>0) {
                     [cell.numIcon setHidden:NO];
                     [cell.numLabel setHidden:NO];
-
+                    
                     cell.elementDescription.textColor=[UIColor greenColor];
                     cell.cellOverlayImageView.hidden = YES;
                     cell.numLabel.text=[NSString stringWithFormat:@"%d" ,[list count]];
                     cell.elementDescription.text=[NSString stringWithFormat:@"%d bulbs are connected." ,[list count]] ;
-
+                    
                 }
                 
             }
-                break;
+            break;
             case 1:
             {
                 
@@ -283,7 +282,7 @@
                 [cell.groupIcon setImage:[UIImage imageNamed:@"door_icon.png"]];
                 cell.elementDescription.textColor=[UIColor redColor];
                 cell.cellOverlayImageView.hidden = NO;
-
+                
                 if(_light)
                 {
                     [cell.numIcon setHidden:NO];
@@ -291,13 +290,13 @@
                     cell.numLabel.text=[NSString stringWithFormat:@"1"];
                     cell.elementDescription.text=@"LIFX Light Found";
                     cell.elementDescription.textColor=[UIColor greenColor];
-
+                    
                     cell.cellOverlayImageView.hidden = YES;
                 }
                 //[cell1.on_offIcon setImage:[UIImage imageNamed:@"off_icon.png"]];
-
+                
             }
-                break;
+            break;
             case 2:
             {
                 cell.elementTitle.text= @"Thermostat";
@@ -309,44 +308,45 @@
                 cell.elementDescription.textColor=[UIColor redColor];
                 cell.cellOverlayImageView.hidden = NO;
             }
-                break;
+            break;
             case 3:
             {
                 NSArray *list=[deviceList valueForKey:@"video"];
-
+                
                 cell.elementTitle.text = @"Video";
                 [cell.groupIcon setImage:[UIImage imageNamed:@"video_icon.png"]];
                 [cell.numIcon setHidden:YES];
                 [cell.numLabel setHidden:YES];
-
+                
                 if ([list count]>0) {
                     [cell.numIcon setHidden:NO];
                     [cell.numLabel setHidden:NO];
-
-                        [cell.on_offIcon setImage:[UIImage imageNamed:@"off_icon.png"]];
-                        cell.elementDescription.text=@"The video is paused.";
-                        cell.elementDescription.textColor=[UIColor redColor];
-                        cell.cellOverlayImageView.hidden = YES;
-                    }
-                    else {
-                        [cell.numIcon removeFromSuperview];
-                        [cell.numLabel removeFromSuperview];
-                        cell.on_offIcon.hidden = YES;
-                        cell.elementDescription.text=@"No media devices found.";
-                        cell.elementDescription.textColor=[UIColor redColor];
-                        cell.cellOverlayImageView.hidden = NO;
-                    }
+                    
+                    [cell.on_offIcon setImage:[UIImage imageNamed:@"off_icon.png"]];
+                    cell.elementDescription.text=@"The video is paused.";
+                    cell.elementDescription.textColor=[UIColor redColor];
+                    cell.cellOverlayImageView.hidden = YES;
+                }
+                else {
+                    [cell.numIcon removeFromSuperview];
+                    [cell.numLabel removeFromSuperview];
+                    cell.on_offIcon.hidden = YES;
+                    cell.elementDescription.text=@"No media devices found.";
+                    cell.elementDescription.textColor=[UIColor redColor];
+                    cell.cellOverlayImageView.hidden = NO;
+                }
             }
-                break;
-
+            break;
+            
             default:
-                break;
+            break;
         }
         
         
         
         
-                return cell;
+        return cell;
+        
     }
     
     return nil;
@@ -365,32 +365,57 @@
             case 0:
             {
                 self.title = @"bulb";
-
+                
             }
-                break;
+            break;
             case 1:
             {
                 self.title = @"security";
             }
-                break;
+            break;
             case 2:
             {
                 self.title = @"thermostat";
             }
-                break;
+            break;
             case 3:
             {
                 self.title = @"video";
-
+                
             }
-                break;
-
+            break;
+            
             default:
-                break;
+            break;
         }
         
-        
         [self performSegueWithIdentifier:@"showDeviceList" sender:self];
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES]
+        //        if ((indexPath.row==3) || (indexPath.row == 2)) {
+        //            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //        }
+        //        else
+        //        if([selectedCell.elementTitle.text isEqualToString:@"video"]){
+        //            if ([groupList count]>=1) {
+        //                NSString *groupName = (indexPath.row < groupList.count)?[groupList objectAtIndex:indexPath.row]:@"";
+        //                NSArray *list=[deviceList valueForKey:groupName];
+        //
+        //
+        //            if ([list count]<=0) {
+        //                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //              }
+        //
+        //            else {
+        //                [self performSegueWithIdentifier:@"showDeviceList" sender:self];
+        //            }
+        //
+        //
+        //            }
+        //        }
+        //        else {
+        //                [self performSegueWithIdentifier:@"showDeviceList" sender:self];
+        //        }
     }
 }
 
@@ -416,7 +441,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(tableView.tag==2) {
-    return self.tableHeaderView;
+        return self.tableHeaderView;
     }
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
@@ -465,7 +490,7 @@
         
         DeviceListViewController *deviceListViewController =[segue destinationViewController];
         deviceListViewController.groupName= self.title;
-
+        
         if([self.title isEqualToString:@"bulb"])
         {
             deviceListViewController.deviceDetailArray=[deviceList valueForKey:self.title];
@@ -478,9 +503,9 @@
         }
         else if ([self.title isEqualToString:@"security"])
         {
-//            HPDevice *device = [[HPDevice  alloc] init];
-//            device.name = @"LFX Light";
-//            device.status = _light.powerState? @"on" :@"off";
+            //            HPDevice *device = [[HPDevice  alloc] init];
+            //            device.name = @"LFX Light";
+            //            device.status = _light.powerState? @"on" :@"off";
             deviceListViewController.deviceDetailArray=[NSMutableArray arrayWithObject:_light];
             deviceListViewController.deviceType = eSecurity;
         }
@@ -497,7 +522,7 @@
     NSLog(@"stewardFoundWithAddress: %@", ipAddress);
     [[Client sharedClient] setDelegate:self];
     [[Client sharedClient] availableDevices];
-
+    
     
 }
 
@@ -532,12 +557,12 @@
     }
     NSLog(@"device list = %@", jsonResult);
     
-//    if (![deviceList valueForKey:@"bulb"])
-//    {
-        [deviceList setObject:[NSMutableArray array] forKey:@"bulb"];
-        [deviceList setObject:[NSMutableArray array] forKey:@"video"];
-
-//    }
+    //    if (![deviceList valueForKey:@"bulb"])
+    //    {
+    [deviceList setObject:[NSMutableArray array] forKey:@"bulb"];
+    [deviceList setObject:[NSMutableArray array] forKey:@"video"];
+    
+    //    }
     for (NSString *key in [jsonResult allKeys]) {
         if ([key isEqualToString:@"bulb"]==YES) {
             for (NSString *deviceId in [[jsonResult valueForKey:@"bulb"] allKeys]){
@@ -606,7 +631,7 @@
                     }
                     else if ([[group lastPathComponent] isEqualToString:@"video"]==YES) {
                         [deviceList setObject:[NSMutableArray array] forKey:@"video"];
-                       
+                        
                         NSString *deviceId = [[keyValue valueForKey:@"whoami"] lastPathComponent];
                         HPVideo *mediaDevice = [self mediaDeviceWithId:deviceId];
                         
@@ -615,7 +640,7 @@
                             mediaDevice = [[HPVideo alloc]initWithData:keyValue];
                             mediaDevice.deviceId=[deviceId lastPathComponent];
                             [[deviceList valueForKey:@"video"] addObject:mediaDevice];
-
+                            
                         }
                         [[deviceList valueForKey:@"video"] addObject:mediaDevice];
                     }
@@ -623,7 +648,7 @@
             }
         }
     }
-        groupList=(NSMutableArray*)[deviceList allKeys];
+    groupList=(NSMutableArray*)[deviceList allKeys];
 }
 
 - (HPBulb *)lightWithId:(NSString *)inDeviceId
