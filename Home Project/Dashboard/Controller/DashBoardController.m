@@ -15,6 +15,7 @@
 #import "NetworkManager.h"
 #import "HPDevice.h"
 #import <LIFXKit/LIFXKit.h>
+#import "HPSceneViewController.h"
 
 
 @interface DashBoardController ()<LFXNetworkContextObserver, LFXLightCollectionObserver, LFXLightObserver>
@@ -511,7 +512,14 @@
         }
         ///NSDictionary *bulbDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"blub1", nil]
     }
-    
+    if ([[segue identifier] isEqualToString:@"showSceneList"]) {
+        
+        HPSceneViewController *sceneViewController = [segue destinationViewController];
+        if (deviceList !=nil) {
+            sceneViewController.devices=deviceList;
+        }
+    }
+
     
 }
 

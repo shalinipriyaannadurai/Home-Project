@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tablecell_iPhone" rowHeight="100" id="bsh-pR-pPR" customClass="HPTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsh-pR-pPR" id="43s-M5-vUb">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_parts_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="UA9-9e-gMs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-tu-dZf">
+                        <rect key="frame" x="8" y="8" width="34" height="33"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="cCv-9T-RLR"/>
+                            <constraint firstAttribute="width" constant="34" id="dTe-Pw-tGg"/>
+                        </constraints>
+                        <state key="normal" image="Unchecked.png">
+                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cCv-9T-RLR"/>
+                                <exclude reference="dTe-Pw-tGg"/>
+                            </mask>
+                        </variation>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-S5-rLL">
+                        <rect key="frame" x="57" y="8" width="263" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="BTV-c8-bUd"/>
+                            <constraint firstAttribute="width" constant="263" id="jfx-fq-L0X"/>
+                            <constraint firstAttribute="height" constant="33" id="jhs-jh-ce3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BTV-c8-bUd"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-se-Kg5">
+                        <rect key="frame" x="-2" y="49" width="324" height="31"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ocd-YZ-oDf"/>
+                        </constraints>
+                        <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </slider>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="leading" secondItem="tQE-tu-dZf" secondAttribute="trailing" constant="15" id="10Q-qi-gcf"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="leading" secondItem="tQE-tu-dZf" secondAttribute="trailing" constant="15" id="1fl-24-Kih"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leading" id="2If-X1-NH0"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="6ZK-S5-rLL" secondAttribute="bottom" constant="8" symbolic="YES" id="ADo-HV-CXN"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="bottom" secondItem="tQE-tu-dZf" secondAttribute="bottom" id="BY9-yz-4cA"/>
+                    <constraint firstAttribute="trailing" secondItem="6ZK-S5-rLL" secondAttribute="trailing" id="C2j-kg-Ugg"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="6ZK-S5-rLL" secondAttribute="bottom" constant="8" symbolic="YES" id="Eh5-0w-a8z"/>
+                    <constraint firstAttribute="trailing" secondItem="RiG-se-Kg5" secondAttribute="trailing" id="EoO-7t-os2"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" id="KsD-Ke-0Uh"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="trailing" secondItem="6ZK-S5-rLL" secondAttribute="trailing" id="MBs-iv-iRg"/>
+                    <constraint firstItem="UA9-9e-gMs" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="top" id="MCi-mW-eHh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UA9-9e-gMs" secondAttribute="bottom" constant="-8.5" id="N3b-LA-JI3"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="trailing" secondItem="UA9-9e-gMs" secondAttribute="trailing" id="PRH-tO-Bmk"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="trailing" secondItem="RiG-se-Kg5" secondAttribute="trailing" id="Pbl-JD-M86"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UA9-9e-gMs" secondAttribute="bottom" constant="-8.5" id="Rqf-pf-1pz"/>
+                    <constraint firstItem="tQE-tu-dZf" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" id="U7n-2Q-H0s"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" id="WgP-pT-TPZ"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" constant="8" id="YAp-Ze-GyX"/>
+                    <constraint firstItem="tQE-tu-dZf" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" id="Yqp-mk-k84"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="tQE-tu-dZf" secondAttribute="top" id="a5h-vX-Ker"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="RiG-se-Kg5" secondAttribute="bottom" constant="12.5" id="eGV-Xp-sfS"/>
+                    <constraint firstItem="UA9-9e-gMs" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leading" id="nku-2f-FpX"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="tQE-tu-dZf" secondAttribute="bottom" constant="8" symbolic="YES" id="qT3-HN-7XS"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="leading" secondItem="UA9-9e-gMs" secondAttribute="leading" id="xfF-Jm-Ljw"/>
+                    <constraint firstItem="UA9-9e-gMs" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="top" id="zrg-0w-QLb"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Rqf-pf-1pz"/>
+                        <exclude reference="zrg-0w-QLb"/>
+                        <exclude reference="U7n-2Q-H0s"/>
+                        <exclude reference="2If-X1-NH0"/>
+                        <exclude reference="ADo-HV-CXN"/>
+                        <exclude reference="EoO-7t-os2"/>
+                        <exclude reference="MBs-iv-iRg"/>
+                        <exclude reference="eGV-Xp-sfS"/>
+                        <exclude reference="qT3-HN-7XS"/>
+                        <exclude reference="xfF-Jm-Ljw"/>
+                        <exclude reference="10Q-qi-gcf"/>
+                        <exclude reference="WgP-pT-TPZ"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="brightnessSlider" destination="RiG-se-Kg5" id="t67-Kz-00b"/>
+                <outlet property="deviceName" destination="6ZK-S5-rLL" id="T85-P7-WaD"/>
+                <outlet property="isDeviceSelected" destination="tQE-tu-dZf" id="Kck-zm-ZGh"/>
+            </connections>
+            <point key="canvasLocation" x="335" y="375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Unchecked.png" width="36" height="36"/>
+        <image name="home_parts_bg.png" width="1024" height="150"/>
+    </resources>
+</document>

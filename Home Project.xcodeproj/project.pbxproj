@@ -132,8 +132,45 @@
 		E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7382A0419EBE5C3000AA7DA /* libicucore.dylib */; };
 		E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */; };
 		E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */; };
+		EF3885C61A1259930037758E /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
+		EF3885DB1A1259D70037758E /* HPAddSceneController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885C71A1259D70037758E /* HPAddSceneController_iPhone.xib */; };
+		EF3885DC1A1259D70037758E /* HPAddSceneController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885C91A1259D70037758E /* HPAddSceneController.m */; };
+		EF3885DD1A1259D70037758E /* HPAddSceneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CA1A1259D70037758E /* HPAddSceneController.xib */; };
+		EF3885DE1A1259D70037758E /* HPSceneGridCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CB1A1259D70037758E /* HPSceneGridCell_iPhone.xib */; };
+		EF3885DF1A1259D70037758E /* HPSceneGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885CD1A1259D70037758E /* HPSceneGridCell.m */; };
+		EF3885E01A1259D70037758E /* HPSceneGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CE1A1259D70037758E /* HPSceneGridCell.xib */; };
+		EF3885E11A1259D70037758E /* HPSceneTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */; };
+		EF3885E21A1259D70037758E /* HPSceneTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D11A1259D70037758E /* HPSceneTableCell.m */; };
+		EF3885E31A1259D70037758E /* HPSceneTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D21A1259D70037758E /* HPSceneTableCell.xib */; };
+		EF3885E41A1259D70037758E /* HPSceneViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */; };
+		EF3885E51A1259D70037758E /* HPSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D51A1259D70037758E /* HPSceneViewController.m */; };
+		EF3885E61A1259D70037758E /* HPSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D61A1259D70037758E /* HPSceneViewController.xib */; };
+		EF3885E71A1259D70037758E /* HPTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */; };
+		EF3885E81A1259D70037758E /* HPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D91A1259D70037758E /* HPTableViewCell.m */; };
+		EF3885E91A1259D70037758E /* HPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885DA1A1259D70037758E /* HPTableViewCell.xib */; };
+		EF3886051A125B690037758E /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885EF1A125B690037758E /* add.png */; };
+		EF3886061A125B690037758E /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F01A125B690037758E /* add@2x.png */; };
+		EF3886071A125B690037758E /* afternoon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F11A125B690037758E /* afternoon.png */; };
+		EF3886081A125B690037758E /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F21A125B690037758E /* checked.png */; };
+		EF3886091A125B690037758E /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F31A125B690037758E /* checked@2x.png */; };
+		EF38860A1A125B690037758E /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F41A125B690037758E /* cloudy.png */; };
+		EF38860B1A125B690037758E /* daylight.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F51A125B690037758E /* daylight.png */; };
+		EF38860C1A125B690037758E /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F61A125B690037758E /* edit.png */; };
+		EF38860D1A125B690037758E /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F71A125B690037758E /* edit@2x.png */; };
+		EF38860E1A125B690037758E /* evening.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F81A125B690037758E /* evening.png */; };
+		EF38860F1A125B690037758E /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885F91A125B690037758E /* grid.png */; };
+		EF3886101A125B690037758E /* grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FA1A125B690037758E /* grid@2x.png */; };
+		EF3886111A125B690037758E /* image icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FB1A125B690037758E /* image icon.png */; };
+		EF3886121A125B690037758E /* image icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FC1A125B690037758E /* image icon@2x.png */; };
+		EF3886131A125B690037758E /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FD1A125B690037758E /* list.png */; };
+		EF3886141A125B690037758E /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FE1A125B690037758E /* list@2x.png */; };
+		EF3886151A125B690037758E /* morning.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3885FF1A125B690037758E /* morning.png */; };
+		EF3886161A125B690037758E /* morning2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886001A125B690037758E /* morning2.png */; };
+		EF3886171A125B690037758E /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886011A125B690037758E /* night.png */; };
+		EF3886181A125B690037758E /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886021A125B690037758E /* no_image.png */; };
+		EF3886191A125B690037758E /* Unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886031A125B690037758E /* Unchecked.png */; };
+		EF38861A1A125B690037758E /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886041A125B690037758E /* Unchecked@2x.png */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
-		FF1586C91A1257A50060642A /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
 		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -304,6 +341,48 @@
 		E7382A0419EBE5C3000AA7DA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		E7AC5F5819F11B6700A8A303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Home Project/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
 		E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
+		EF3885C71A1259D70037758E /* HPAddSceneController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPAddSceneController_iPhone.xib; sourceTree = "<group>"; };
+		EF3885C81A1259D70037758E /* HPAddSceneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAddSceneController.h; sourceTree = "<group>"; };
+		EF3885C91A1259D70037758E /* HPAddSceneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAddSceneController.m; sourceTree = "<group>"; };
+		EF3885CA1A1259D70037758E /* HPAddSceneController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPAddSceneController.xib; sourceTree = "<group>"; };
+		EF3885CB1A1259D70037758E /* HPSceneGridCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneGridCell_iPhone.xib; sourceTree = "<group>"; };
+		EF3885CC1A1259D70037758E /* HPSceneGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSceneGridCell.h; sourceTree = "<group>"; };
+		EF3885CD1A1259D70037758E /* HPSceneGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSceneGridCell.m; sourceTree = "<group>"; };
+		EF3885CE1A1259D70037758E /* HPSceneGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneGridCell.xib; sourceTree = "<group>"; };
+		EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneTableCell_iPhone.xib; sourceTree = "<group>"; };
+		EF3885D01A1259D70037758E /* HPSceneTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSceneTableCell.h; sourceTree = "<group>"; };
+		EF3885D11A1259D70037758E /* HPSceneTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSceneTableCell.m; sourceTree = "<group>"; };
+		EF3885D21A1259D70037758E /* HPSceneTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneTableCell.xib; sourceTree = "<group>"; };
+		EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneViewController_iPhone.xib; sourceTree = "<group>"; };
+		EF3885D41A1259D70037758E /* HPSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSceneViewController.h; sourceTree = "<group>"; };
+		EF3885D51A1259D70037758E /* HPSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSceneViewController.m; sourceTree = "<group>"; };
+		EF3885D61A1259D70037758E /* HPSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneViewController.xib; sourceTree = "<group>"; };
+		EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		EF3885D81A1259D70037758E /* HPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTableViewCell.h; sourceTree = "<group>"; };
+		EF3885D91A1259D70037758E /* HPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTableViewCell.m; sourceTree = "<group>"; };
+		EF3885DA1A1259D70037758E /* HPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPTableViewCell.xib; sourceTree = "<group>"; };
+		EF3885EF1A125B690037758E /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		EF3885F01A125B690037758E /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		EF3885F11A125B690037758E /* afternoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afternoon.png; sourceTree = "<group>"; };
+		EF3885F21A125B690037758E /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		EF3885F31A125B690037758E /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		EF3885F41A125B690037758E /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
+		EF3885F51A125B690037758E /* daylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daylight.png; sourceTree = "<group>"; };
+		EF3885F61A125B690037758E /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		EF3885F71A125B690037758E /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		EF3885F81A125B690037758E /* evening.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evening.png; sourceTree = "<group>"; };
+		EF3885F91A125B690037758E /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
+		EF3885FA1A125B690037758E /* grid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid@2x.png"; sourceTree = "<group>"; };
+		EF3885FB1A125B690037758E /* image icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image icon.png"; sourceTree = "<group>"; };
+		EF3885FC1A125B690037758E /* image icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image icon@2x.png"; sourceTree = "<group>"; };
+		EF3885FD1A125B690037758E /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		EF3885FE1A125B690037758E /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		EF3885FF1A125B690037758E /* morning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morning.png; sourceTree = "<group>"; };
+		EF3886001A125B690037758E /* morning2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morning2.png; sourceTree = "<group>"; };
+		EF3886011A125B690037758E /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
+		EF3886021A125B690037758E /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
+		EF3886031A125B690037758E /* Unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unchecked.png; sourceTree = "<group>"; };
+		EF3886041A125B690037758E /* Unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unchecked@2x.png"; sourceTree = "<group>"; };
 		EF7025E21A0B8B7C0092848B /* HPDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDevice.h; sourceTree = "<group>"; };
 		EF7025E31A0B8B7C0092848B /* HPDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDevice.m; sourceTree = "<group>"; };
 		FF1586C81A1257A50060642A /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LIFXKit.framework; sourceTree = "<group>"; };
@@ -326,7 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1586C91A1257A50060642A /* LIFXKit.framework in Frameworks */,
+				EF3885C61A1259930037758E /* LIFXKit.framework in Frameworks */,
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
 				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
@@ -613,6 +692,7 @@
 		AF124BC51A035B7200F9591D /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				EF3885EE1A125B3E0037758E /* Scene */,
 				AF124BC61A035B7200F9591D /* dashboard */,
 				AF124BFA1A035B7200F9591D /* login */,
 				AF124C0D1A035B7200F9591D /* splash */,
@@ -764,6 +844,7 @@
 		E73829D219EBCEA6000AA7DA /* Home Project */ = {
 			isa = PBXGroup;
 			children = (
+				EF3885EA1A125AA40037758E /* Scenes */,
 				FFD562731A10C42A009A2D0D /* LIFXKit */,
 				81B8D1251A0B57DE0021CC84 /* DeviceSettings */,
 				8145B61C1A08AD4C00240CDF /* Devices */,
@@ -808,6 +889,86 @@
 				E73829EE19EBCEA6000AA7DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF3885EA1A125AA40037758E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EF3885ED1A125B050037758E /* View */,
+				EF3885EC1A125ADF0037758E /* Model */,
+				EF3885EB1A125AB40037758E /* Controller */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		EF3885EB1A125AB40037758E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF3885C81A1259D70037758E /* HPAddSceneController.h */,
+				EF3885C91A1259D70037758E /* HPAddSceneController.m */,
+				EF3885D41A1259D70037758E /* HPSceneViewController.h */,
+				EF3885D51A1259D70037758E /* HPSceneViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EF3885EC1A125ADF0037758E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF3885ED1A125B050037758E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF3885C71A1259D70037758E /* HPAddSceneController_iPhone.xib */,
+				EF3885CA1A1259D70037758E /* HPAddSceneController.xib */,
+				EF3885CB1A1259D70037758E /* HPSceneGridCell_iPhone.xib */,
+				EF3885CC1A1259D70037758E /* HPSceneGridCell.h */,
+				EF3885CD1A1259D70037758E /* HPSceneGridCell.m */,
+				EF3885CE1A1259D70037758E /* HPSceneGridCell.xib */,
+				EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */,
+				EF3885D01A1259D70037758E /* HPSceneTableCell.h */,
+				EF3885D11A1259D70037758E /* HPSceneTableCell.m */,
+				EF3885D21A1259D70037758E /* HPSceneTableCell.xib */,
+				EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */,
+				EF3885D61A1259D70037758E /* HPSceneViewController.xib */,
+				EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */,
+				EF3885D81A1259D70037758E /* HPTableViewCell.h */,
+				EF3885D91A1259D70037758E /* HPTableViewCell.m */,
+				EF3885DA1A1259D70037758E /* HPTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EF3885EE1A125B3E0037758E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				EF3885EF1A125B690037758E /* add.png */,
+				EF3885F01A125B690037758E /* add@2x.png */,
+				EF3885F11A125B690037758E /* afternoon.png */,
+				EF3885F21A125B690037758E /* checked.png */,
+				EF3885F31A125B690037758E /* checked@2x.png */,
+				EF3885F41A125B690037758E /* cloudy.png */,
+				EF3885F51A125B690037758E /* daylight.png */,
+				EF3885F61A125B690037758E /* edit.png */,
+				EF3885F71A125B690037758E /* edit@2x.png */,
+				EF3885F81A125B690037758E /* evening.png */,
+				EF3885F91A125B690037758E /* grid.png */,
+				EF3885FA1A125B690037758E /* grid@2x.png */,
+				EF3885FB1A125B690037758E /* image icon.png */,
+				EF3885FC1A125B690037758E /* image icon@2x.png */,
+				EF3885FD1A125B690037758E /* list.png */,
+				EF3885FE1A125B690037758E /* list@2x.png */,
+				EF3885FF1A125B690037758E /* morning.png */,
+				EF3886001A125B690037758E /* morning2.png */,
+				EF3886011A125B690037758E /* night.png */,
+				EF3886021A125B690037758E /* no_image.png */,
+				EF3886031A125B690037758E /* Unchecked.png */,
+				EF3886041A125B690037758E /* Unchecked@2x.png */,
+			);
+			name = Scene;
 			sourceTree = "<group>";
 		};
 		FFD562731A10C42A009A2D0D /* LIFXKit */ = {
@@ -909,18 +1070,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF124C181A035B7200F9591D /* bulb_icon@2x.png in Resources */,
+				EF3885E91A1259D70037758E /* HPTableViewCell.xib in Resources */,
 				AF124C2A1A035B7200F9591D /* light_icon.png in Resources */,
+				EF38860C1A125B690037758E /* edit.png in Resources */,
 				AF124C391A035B7200F9591D /* on_icon@2x.png in Resources */,
 				AF124C281A035B7200F9591D /* key_icon@2x.png in Resources */,
 				AF124C381A035B7200F9591D /* on_icon.png in Resources */,
 				AF124C511A035B7200F9591D /* login_logo@2x.png in Resources */,
 				AF124C601A035B7200F9591D /* loading_line2.png in Resources */,
 				AF124C331A035B7200F9591D /* music_icon@2x.png in Resources */,
+				EF3886121A125B690037758E /* image icon@2x.png in Resources */,
 				81B8D1231A0B569A0021CC84 /* back.png in Resources */,
 				AF124BC31A0356DE00F9591D /* TotalElements.xib in Resources */,
 				AF124C491A035B7200F9591D /* video_icon@2x.png in Resources */,
 				AF124C5A1A035B7200F9591D /* user_icon.png in Resources */,
+				EF3886151A125B690037758E /* morning.png in Resources */,
+				EF3885E01A1259D70037758E /* HPSceneGridCell.xib in Resources */,
+				EF3886141A125B690037758E /* list@2x.png in Resources */,
 				AF124C481A035B7200F9591D /* video_icon.png in Resources */,
+				EF3886081A125B690037758E /* checked.png in Resources */,
 				AF124C2C1A035B7200F9591D /* menu_icon.png in Resources */,
 				AF124C4C1A035B7200F9591D /* key_icon.png in Resources */,
 				AF124C501A035B7200F9591D /* login_logo.png in Resources */,
@@ -933,10 +1101,12 @@
 				AF124C301A035B7200F9591D /* more_icon.png in Resources */,
 				AF124C3A1A035B7200F9591D /* security_icon.png in Resources */,
 				AF124C1D1A035B7200F9591D /* electronics_icon@2x.png in Resources */,
+				EF3886131A125B690037758E /* list.png in Resources */,
 				AF124C611A035B7200F9591D /* loading_line2@2x.png in Resources */,
 				AF124C631A035B7200F9591D /* logo@2x.png in Resources */,
 				AF124C2B1A035B7200F9591D /* light_icon@2x.png in Resources */,
 				AF124C2D1A035B7200F9591D /* menu_icon@2x.png in Resources */,
+				EF3885DB1A1259D70037758E /* HPAddSceneController_iPhone.xib in Resources */,
 				E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */,
 				AF124C1A1A035B7200F9591D /* door_icon.png in Resources */,
 				AF124C261A035B7200F9591D /* hue_icon.png in Resources */,
@@ -946,6 +1116,8 @@
 				AF124C361A035B7200F9591D /* off_icon.png in Resources */,
 				AF124C321A035B7200F9591D /* music_icon.png in Resources */,
 				AF124C4F1A035B7200F9591D /* lock_icon@2x.png in Resources */,
+				EF38861A1A125B690037758E /* Unchecked@2x.png in Resources */,
+				EF3886191A125B690037758E /* Unchecked.png in Resources */,
 				AF124C211A035B7200F9591D /* heat_icon@2x.png in Resources */,
 				AF124C2E1A035B7200F9591D /* moisture_icon.png in Resources */,
 				AF124C1B1A035B7200F9591D /* door_icon@2x.png in Resources */,
@@ -955,27 +1127,41 @@
 				AF124C591A035B7200F9591D /* unlock_icon@2x.png in Resources */,
 				AF124C581A035B7200F9591D /* unlock_icon.png in Resources */,
 				AF124C4D1A035B7200F9591D /* key_icon@2x.png in Resources */,
+				EF3886071A125B690037758E /* afternoon.png in Resources */,
 				AF124C2F1A035B7200F9591D /* moisture_icon@2x.png in Resources */,
 				AF124C561A035B7200F9591D /* textField_line.png in Resources */,
 				8168A5381A0A8533005943EA /* DeviceListingCell.xib in Resources */,
 				AF124C571A035B7200F9591D /* textField_line@2x.png in Resources */,
 				AF124BC11A0356DE00F9591D /* ElementCell.xib in Resources */,
 				AF124C411A035B7200F9591D /* thermostat_icon@2x.png in Resources */,
+				EF3886171A125B690037758E /* night.png in Resources */,
+				EF3886061A125B690037758E /* add@2x.png in Resources */,
+				EF3885E31A1259D70037758E /* HPSceneTableCell.xib in Resources */,
 				AF124C5B1A035B7200F9591D /* user_icon@2x.png in Resources */,
 				AF124C311A035B7200F9591D /* more_icon@2x.png in Resources */,
 				AF124C3B1A035B7200F9591D /* security_icon@2x.png in Resources */,
 				AF124C291A035B7200F9591D /* lifx_icon.png in Resources */,
 				AF124C4A1A035B7200F9591D /* dots.png in Resources */,
 				AF124C621A035B7200F9591D /* logo.png in Resources */,
+				EF3886161A125B690037758E /* morning2.png in Resources */,
+				EF38860D1A125B690037758E /* edit@2x.png in Resources */,
+				EF3886091A125B690037758E /* checked@2x.png in Resources */,
+				EF38860F1A125B690037758E /* grid.png in Resources */,
+				EF3886101A125B690037758E /* grid@2x.png in Resources */,
 				AF124C5C1A035B7200F9591D /* bg.png in Resources */,
 				AF124C3C1A035B7200F9591D /* settings_icon.png in Resources */,
+				EF38860B1A125B690037758E /* daylight.png in Resources */,
+				EF3886181A125B690037758E /* no_image.png in Resources */,
 				AF124C5F1A035B7200F9591D /* loading_line1@2x.png in Resources */,
 				AF124C221A035B7200F9591D /* home_parts_bg.png in Resources */,
+				EF38860E1A125B690037758E /* evening.png in Resources */,
 				AF124C521A035B7200F9591D /* loginbg.png in Resources */,
 				AF124C231A035B7200F9591D /* home_parts_bg@2x.png in Resources */,
 				E7012C7319EE2A10001EBCE0 /* Main_iPad.storyboard in Resources */,
 				AF124C1E1A035B7200F9591D /* frequen_bg.png in Resources */,
 				AF124C401A035B7200F9591D /* thermostat_icon.png in Resources */,
+				EF3886051A125B690037758E /* add.png in Resources */,
+				EF3885E11A1259D70037758E /* HPSceneTableCell_iPhone.xib in Resources */,
 				AF124C531A035B7200F9591D /* loginbg@2x.png in Resources */,
 				AF124C431A035B7200F9591D /* top_navi@2x.png in Resources */,
 				AF124C3D1A035B7200F9591D /* settings_icon@2x.png in Resources */,
@@ -983,17 +1169,24 @@
 				AF124C421A035B7200F9591D /* top_navi.png in Resources */,
 				AF124C541A035B7200F9591D /* play_icon.png in Resources */,
 				AF124C5E1A035B7200F9591D /* loading_line1.png in Resources */,
+				EF3885E61A1259D70037758E /* HPSceneViewController.xib in Resources */,
+				EF3885E71A1259D70037758E /* HPTableViewCell_iPhone.xib in Resources */,
 				AF124C171A035B7200F9591D /* bulb_icon.png in Resources */,
 				AF124C1F1A035B7200F9591D /* frequen_bg@2x.png in Resources */,
+				EF3885DD1A1259D70037758E /* HPAddSceneController.xib in Resources */,
+				EF3885DE1A1259D70037758E /* HPSceneGridCell_iPhone.xib in Resources */,
 				AF124C191A035B7200F9591D /* chromecast_icon.png in Resources */,
 				E73829E119EBCEA6000AA7DA /* Images.xcassets in Resources */,
 				8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */,
 				E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */,
 				AF124C201A035B7200F9591D /* heat_icon.png in Resources */,
+				EF3885E41A1259D70037758E /* HPSceneViewController_iPhone.xib in Resources */,
+				EF3886111A125B690037758E /* image icon.png in Resources */,
 				AF124C351A035B7200F9591D /* number_bg@2x.png in Resources */,
 				AF124C4E1A035B7200F9591D /* lock_icon.png in Resources */,
 				81B8D1581A0BB9000021CC84 /* LICENCE.txt in Resources */,
 				AF124C5D1A035B7200F9591D /* bg@2x.png in Resources */,
+				EF38860A1A125B690037758E /* cloudy.png in Resources */,
 				AF124C471A035B7200F9591D /* veric_line@2x.png in Resources */,
 				AF124C241A035B7200F9591D /* horiz_line.png in Resources */,
 			);
@@ -1016,11 +1209,13 @@
 				AF124B121A03567A00F9591D /* DashBoardController.m in Sources */,
 				AF124B141A03567A00F9591D /* ProfileViewController.m in Sources */,
 				81B8D1591A0BB9000021CC84 /* NSData+SRB64Additions.m in Sources */,
+				EF3885E81A1259D70037758E /* HPTableViewCell.m in Sources */,
 				81B8D14F1A0BB9000021CC84 /* GTMNSScanner+Unsigned.m in Sources */,
 				81B8D15B1A0BB9000021CC84 /* SRWebSocket.m in Sources */,
 				EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */,
 				81B8D14D1A0BB9000021CC84 /* GTMMethodCheck.m in Sources */,
 				E73829D919EBCEA6000AA7DA /* AppDelegate.m in Sources */,
+				EF3885DC1A1259D70037758E /* HPAddSceneController.m in Sources */,
 				AF124BC21A0356DE00F9591D /* TotalElementCell.m in Sources */,
 				81B8D1521A0BB9000021CC84 /* GTMStringEncoding.m in Sources */,
 				81B8D1641A0BB9600021CC84 /* Devices.m in Sources */,
@@ -1031,13 +1226,16 @@
 				8145B61F1A08AD4C00240CDF /* DeviceListViewController.m in Sources */,
 				81B8D1681A0BB9600021CC84 /* Util.m in Sources */,
 				81B8D15A1A0BB9000021CC84 /* README.md in Sources */,
+				EF3885E51A1259D70037758E /* HPSceneViewController.m in Sources */,
 				81B8D1541A0BB9000021CC84 /* OTPAuthURL.m in Sources */,
 				81B8D1651A0BB9600021CC84 /* Monitor.m in Sources */,
 				81B8D1501A0BB9000021CC84 /* GTMNSString+URLArguments.m in Sources */,
 				AF124B131A03567A00F9591D /* LoginViewController.m in Sources */,
+				EF3885DF1A1259D70037758E /* HPSceneGridCell.m in Sources */,
 				81B8D1561A0BB9000021CC84 /* TOTPGenerator.m in Sources */,
 				81B8D1531A0BB9000021CC84 /* HOTPGenerator.m in Sources */,
 				81B8D1631A0BB9600021CC84 /* Client.m in Sources */,
+				EF3885E21A1259D70037758E /* HPSceneTableCell.m in Sources */,
 				AF124BC01A0356DE00F9591D /* ElementCell.m in Sources */,
 				81B8D14E1A0BB9000021CC84 /* GTMNSDictionary+URLArguments.m in Sources */,
 				8145B6221A08AE8000240CDF /* NetworkManager.m in Sources */,
@@ -1183,7 +1381,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+					"$(PROJECT_DIR)/Home",
+					Project,
 					"$(PROJECT_DIR)/Home",
 					Project,
 				);
@@ -1210,7 +1409,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+					"$(PROJECT_DIR)/Home",
+					Project,
 					"$(PROJECT_DIR)/Home",
 					Project,
 				);

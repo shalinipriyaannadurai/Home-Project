@@ -38,6 +38,7 @@
 @end
 @interface HPScence : NSObject
 @property(nonatomic,retain)NSString *name;
+@property(nonatomic,retain)NSString *sceneDescription;
 @property(nonatomic,retain)NSString *imageName;
-@property(nonatomic,retain)NSDictionary *param;
+@property(nonatomic,retain)NSMutableArray *param;
 @end

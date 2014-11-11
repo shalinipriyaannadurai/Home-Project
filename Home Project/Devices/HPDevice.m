@@ -37,7 +37,7 @@
 {
     if (self = [super init])
     {
-        self.brightness=50;
+        //self.brightness=50;
     }
     return self;
 }
@@ -119,8 +119,9 @@
     if (self = [super init])
     {
         self.name=[[NSString alloc]init];
+        self.sceneDescription=[[NSString alloc]init];
         self.imageName=[[NSString alloc]init];
-        self.param=[NSMutableDictionary dictionary];
+        self.param=[NSMutableArray array];
     }
     return self;
 }
