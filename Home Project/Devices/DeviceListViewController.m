@@ -26,7 +26,6 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceStateUpdated) name:@"DeviceUpdateNotification" object:nil];
-    
     // Do any additional setup after loading the view.
     self.titleString.text = self.groupName;
     
@@ -49,6 +48,13 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+- (void)deviceStateUpdated
+{
+    [self.deviceListingTable reloadData];
+    
+}
+
 
 - (void)deviceStateUpdated
 {
