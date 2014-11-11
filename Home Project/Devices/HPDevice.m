@@ -20,6 +20,17 @@
     return self;
 }
 
+
+- (BOOL)isDeviceWithId:(NSString *)inDeviceId
+{
+    BOOL retValue = NO;
+    
+    if([self.deviceId isEqualToString:inDeviceId])
+        return YES;
+    
+    return retValue;
+}
+
 @end
 @implementation HPBulb
 - (id) init
@@ -30,6 +41,34 @@
     }
     return self;
 }
+
+- (HPBulb *) initWithData:(NSDictionary *)inData
+{
+    if (self = [super init])
+    {
+        self.name=[inData valueForKey:@"name"];
+        self.status=[inData valueForKey:@"status"];
+        if ([self.status isEqualToString:@"waiting"])
+            self.status=@"off";
+        self.brightness=[[[inData valueForKey:@"info"] valueForKey:@"brightness"] floatValue];
+        self.lastupdated=[inData valueForKey:@"lastupdated"];
+
+    }
+    return self;
+}
+
+
+- (void) updateLightWithData:(NSDictionary *)inData
+{
+    self.deviceId=[[inData valueForKey:@"whoami"] stringByReplacingOccurrencesOfString:@"device/" withString:@""];
+    self.name=[inData valueForKey:@"name"];
+    self.status=[inData valueForKey:@"status"];
+    if ([self.status isEqualToString:@"waiting"])
+        self.status=@"off";
+    self.brightness=[[[inData valueForKey:@"info"] valueForKey:@"brightness"] floatValue];
+
+}
+
 @end
 @implementation HPVideo
 - (id) init
@@ -42,6 +81,36 @@
     }
     return self;
 }
+
+
+- (HPVideo *) initWithData:(NSDictionary *)inData
+{
+    if (self = [super init])
+    {
+        self.name=[inData valueForKey:@"name"];
+        self.status=[inData valueForKey:@"status"];
+        if ([self.status isEqualToString:@"waiting"])
+            self.status=@"off";
+        self.lastupdated=[inData valueForKey:@"lastupdated"];
+        self.duration=0;
+        self.position=0;
+        self.url=[[NSString alloc]init];
+    }
+    return self;
+}
+
+
+- (void) updateLightWithData:(NSDictionary *)inData
+{
+    self.deviceId=[inData valueForKey:@"whoami"];
+    self.name=[inData valueForKey:@"name"];
+    self.status=[inData valueForKey:@"status"];
+    self.position=[[[inData valueForKey:@"info"] valueForKey:@"position"]floatValue ];
+    self.duration=[[[inData valueForKey:@"info"] valueForKey:@"duration"]floatValue ];
+    self.url=[[inData valueForKey:@"info"] valueForKey:@"url"];
+
+}
+
 @end
 
 @implementation HPScence

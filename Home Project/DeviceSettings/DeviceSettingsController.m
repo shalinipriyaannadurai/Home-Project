@@ -22,6 +22,9 @@
     _deviceId=_device.deviceId;
     _slider.value=[_brightness integerValue];
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceStateUpdated) name:@"DeviceUpdateNotification" object:nil];
+
     // Do any additional setup after loading the view.
 }
 
@@ -40,6 +43,16 @@
 }
 */
 
+
+- (void)deviceStateUpdated
+{
+    _slider.value = _device.brightness;
+    int progressAsInt =(int)(_slider.value);
+    NSString *newText =[[NSString alloc]
+                        initWithFormat:@"%d%%",progressAsInt];
+    self.brightnessLabel.text=newText;
+
+}
 - (IBAction)backButtonClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -47,21 +60,14 @@
 - (IBAction)sliderValueChanged:(id)sender {
     NSString *request;
     UISlider *slider = (UISlider *) sender;
-    int progressAsInt =(int)(slider.value + 0.5f);
+    int progressAsInt =(int)(slider.value);
     NSString *newText =[[NSString alloc]
                         initWithFormat:@"%d%%",progressAsInt];
     self.brightnessLabel.text=newText;
     _brightness=self.brightnessLabel.text ;
-    //request = @"on";
+    request = @"on";
 
     _device.brightness=[_brightness integerValue];
-    if(_device.brightness==0){
-        _device.status=@"off";
-        request = @"off";
-    }else{
-        _device.status=@"on";
-        request = @"on";
-    }
     NSString *device = [NSString stringWithFormat:@"/api/v1/device/perform/%@",[_deviceId lastPathComponent]];
         NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %d}",[_brightness intValue]];
     [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];

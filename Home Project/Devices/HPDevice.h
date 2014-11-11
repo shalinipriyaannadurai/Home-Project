@@ -13,11 +13,17 @@
 @property(nonatomic,retain)NSString *status;
 @property(nonatomic,retain)NSString *deviceId;
 @property(nonatomic,retain)NSString *lastupdated;
+
+- (BOOL)isDeviceWithId:(NSString *)inDeviceId;
+
 @end
 
 
 @interface HPBulb : HPDevice
 @property(nonatomic,assign)float brightness;
+- (void) updateLightWithData:(NSDictionary *)inData;
+- (HPBulb *) initWithData:(NSDictionary *)inData;
+
 @end
 
 
@@ -25,6 +31,8 @@
 @property(nonatomic,retain)NSString *url;
 @property(nonatomic,assign)float position;
 @property(nonatomic,assign)int duration;
+- (HPVideo *) initWithData:(NSDictionary *)inData;
+- (void) updateLightWithData:(NSDictionary *)inData;
 
 
 @end

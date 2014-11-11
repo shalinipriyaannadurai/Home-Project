@@ -15,7 +15,6 @@
 		81B8D1211A0B49E30021CC84 /* DeviceListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1201A0B49E30021CC84 /* DeviceListingCell.m */; };
 		81B8D1231A0B569A0021CC84 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B8D1221A0B569A0021CC84 /* back.png */; };
 		81B8D1281A0B58040021CC84 /* DeviceSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1271A0B58040021CC84 /* DeviceSettingsController.m */; };
-		81B8D14C1A0BB9000021CC84 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D12B1A0BB9000021CC84 /* GCDAsyncUdpSocket.m */; };
 		81B8D14D1A0BB9000021CC84 /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D12F1A0BB9000021CC84 /* GTMMethodCheck.m */; };
 		81B8D14E1A0BB9000021CC84 /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1311A0BB9000021CC84 /* GTMNSDictionary+URLArguments.m */; };
 		81B8D14F1A0BB9000021CC84 /* GTMNSScanner+Unsigned.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8D1331A0BB9000021CC84 /* GTMNSScanner+Unsigned.m */; };
@@ -134,6 +133,9 @@
 		E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */; };
 		E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
+		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
+		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
+		FFD562721A10C3FB009A2D0D /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,8 +161,6 @@
 		81B8D1221A0B569A0021CC84 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		81B8D1261A0B58040021CC84 /* DeviceSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSettingsController.h; sourceTree = "<group>"; };
 		81B8D1271A0B58040021CC84 /* DeviceSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSettingsController.m; sourceTree = "<group>"; };
-		81B8D12A1A0BB9000021CC84 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		81B8D12B1A0BB9000021CC84 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		81B8D12D1A0BB9000021CC84 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		81B8D12E1A0BB9000021CC84 /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMethodCheck.h; sourceTree = "<group>"; };
 		81B8D12F1A0BB9000021CC84 /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMethodCheck.m; sourceTree = "<group>"; };
@@ -306,6 +306,19 @@
 		E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
 		EF7025E21A0B8B7C0092848B /* HPDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDevice.h; sourceTree = "<group>"; };
 		EF7025E31A0B8B7C0092848B /* HPDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDevice.m; sourceTree = "<group>"; };
+		FFD5626D1A10C3FB009A2D0D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LIFXKit.framework; path = ../../Projects/LIFXSample/LIFXSample/LIFXKit.framework; sourceTree = "<group>"; };
+		FFD562741A10C42A009A2D0D /* LFXAllLightsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXAllLightsCollection.h; sourceTree = "<group>"; };
+		FFD562751A10C42A009A2D0D /* LFXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXClient.h; sourceTree = "<group>"; };
+		FFD562761A10C42A009A2D0D /* LFXDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXDevice.h; sourceTree = "<group>"; };
+		FFD562771A10C42A009A2D0D /* LFXHSBKColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXHSBKColor.h; sourceTree = "<group>"; };
+		FFD562781A10C42A009A2D0D /* LFXLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXLight.h; sourceTree = "<group>"; };
+		FFD562791A10C42A009A2D0D /* LFXLightCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXLightCollection.h; sourceTree = "<group>"; };
+		FFD5627A1A10C42A009A2D0D /* LFXNetworkContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXNetworkContext.h; sourceTree = "<group>"; };
+		FFD5627B1A10C42A009A2D0D /* LFXTaggedLightCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXTaggedLightCollection.h; sourceTree = "<group>"; };
+		FFD5627C1A10C42A009A2D0D /* LFXTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXTypes.h; sourceTree = "<group>"; };
+		FFD5627D1A10C42A009A2D0D /* LIFXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIFXKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,8 +327,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
+				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
+				FFD562721A10C3FB009A2D0D /* LIFXKit.framework in Frameworks */,
 				E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */,
+				FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */,
 				E7382A0319EBE595000AA7DA /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,8 +405,6 @@
 		81B8D1291A0BB9000021CC84 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				81B8D12A1A0BB9000021CC84 /* GCDAsyncUdpSocket.h */,
-				81B8D12B1A0BB9000021CC84 /* GCDAsyncUdpSocket.m */,
 				81B8D12C1A0BB9000021CC84 /* Google Toolbox for Mac */,
 				81B8D13A1A0BB9000021CC84 /* OTPAuth */,
 				81B8D1431A0BB9000021CC84 /* SocketRocket */,
@@ -460,6 +474,9 @@
 		AF124AFB1A03562100F9591D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFD5626D1A10C3FB009A2D0D /* libz.dylib */,
+				FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */,
+				FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */,
 				81B8D1691A0BBA9D0021CC84 /* UIKit.framework */,
 				8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */,
 				E7382A0419EBE5C3000AA7DA /* libicucore.dylib */,
@@ -747,6 +764,7 @@
 		E73829D219EBCEA6000AA7DA /* Home Project */ = {
 			isa = PBXGroup;
 			children = (
+				FFD562731A10C42A009A2D0D /* LIFXKit */,
 				81B8D1251A0B57DE0021CC84 /* DeviceSettings */,
 				8145B61C1A08AD4C00240CDF /* Devices */,
 				8145B61B1A08AD2000240CDF /* Network */,
@@ -790,6 +808,23 @@
 				E73829EE19EBCEA6000AA7DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFD562731A10C42A009A2D0D /* LIFXKit */ = {
+			isa = PBXGroup;
+			children = (
+				FFD562741A10C42A009A2D0D /* LFXAllLightsCollection.h */,
+				FFD562751A10C42A009A2D0D /* LFXClient.h */,
+				FFD562761A10C42A009A2D0D /* LFXDevice.h */,
+				FFD562771A10C42A009A2D0D /* LFXHSBKColor.h */,
+				FFD562781A10C42A009A2D0D /* LFXLight.h */,
+				FFD562791A10C42A009A2D0D /* LFXLightCollection.h */,
+				FFD5627A1A10C42A009A2D0D /* LFXNetworkContext.h */,
+				FFD5627B1A10C42A009A2D0D /* LFXTaggedLightCollection.h */,
+				FFD5627C1A10C42A009A2D0D /* LFXTypes.h */,
+				FFD5627D1A10C42A009A2D0D /* LIFXKit.h */,
+			);
+			path = LIFXKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -986,7 +1021,6 @@
 				EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */,
 				81B8D14D1A0BB9000021CC84 /* GTMMethodCheck.m in Sources */,
 				E73829D919EBCEA6000AA7DA /* AppDelegate.m in Sources */,
-				81B8D14C1A0BB9000021CC84 /* GCDAsyncUdpSocket.m in Sources */,
 				AF124BC21A0356DE00F9591D /* TotalElementCell.m in Sources */,
 				81B8D1521A0BB9000021CC84 /* GTMStringEncoding.m in Sources */,
 				81B8D1641A0BB9600021CC84 /* Devices.m in Sources */,
@@ -1073,8 +1107,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gautham Shetty (S444A2KS5P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gautham Shetty (S444A2KS5P)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1094,6 +1128,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "49392f20-865a-4af0-a74c-8aecd1622042";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1118,8 +1153,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gautham Shetty (S444A2KS5P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gautham Shetty (S444A2KS5P)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1132,6 +1167,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "49392f20-865a-4af0-a74c-8aecd1622042";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1145,6 +1181,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1166,6 +1206,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

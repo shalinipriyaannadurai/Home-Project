@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 
 #import "Client.h"
-#import "GCDAsyncUdpSocket.h"
+//#import "GCDAsyncUdpSocket.h"
 #import "TOTPGenerator.h"
 #import "OTPAuthURL.h"
 

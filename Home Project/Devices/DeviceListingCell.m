@@ -23,6 +23,6 @@
 
 - (IBAction)switchValueChanged:(id)sender {
     
-    [_delegate switchDeviceState:_deviceId forDevBrightness:_brightness.text withSwitchState:_onOffSwitch.on];
+    [_delegate switchDeviceState:_deviceId forDevBrightness:_txtBrightness.text withSwitchState:_onOffSwitch.on];
    }
 @end

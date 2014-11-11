@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Client.h"
 
-@interface DashBoardController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,retain)NSDictionary *deviceList;
+@interface DashBoardController : UIViewController<UITableViewDelegate,UITableViewDataSource, ClientDelegate>
+@property (nonatomic,retain)NSMutableDictionary *deviceList;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (weak, nonatomic) IBOutlet UIView *subView;
 

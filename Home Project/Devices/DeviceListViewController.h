@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HPDevice.h"
 #import "DeviceListingCell.h"
-
+#import "Utility.h"
 
 @interface DeviceListViewController : UIViewController<deviceSwitchStateDelegate>
 
@@ -23,5 +23,5 @@
 @property (nonatomic,strong) id selectedDeviceGroup;
 @property (weak, nonatomic) IBOutlet UILabel *titleString;
 @property (weak, nonatomic) IBOutlet UITableView *deviceListingTable;
-
+@property (assign, nonatomic) HPDeviceType deviceType;
 @end

@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *deviceName;
 @property (weak, nonatomic) IBOutlet UISwitch *onOffSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *brightness;
+@property (weak, nonatomic) IBOutlet UILabel *txtBrightness;
 @property (weak, nonatomic) IBOutlet UIImageView *deviceImage;
 @property (nonatomic,strong) NSString *deviceId;
 @property(nonatomic,weak) id <deviceSwitchStateDelegate> delegate;
