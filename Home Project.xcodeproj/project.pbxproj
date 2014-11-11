@@ -133,9 +133,9 @@
 		E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */; };
 		E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
+		FF1586C91A1257A50060642A /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
 		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
-		FFD562721A10C3FB009A2D0D /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,9 +306,9 @@
 		E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = ../Main_iPhone.storyboard; sourceTree = "<group>"; };
 		EF7025E21A0B8B7C0092848B /* HPDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDevice.h; sourceTree = "<group>"; };
 		EF7025E31A0B8B7C0092848B /* HPDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDevice.m; sourceTree = "<group>"; };
+		FF1586C81A1257A50060642A /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LIFXKit.framework; sourceTree = "<group>"; };
 		FFD5626D1A10C3FB009A2D0D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LIFXKit.framework; path = ../../Projects/LIFXSample/LIFXSample/LIFXKit.framework; sourceTree = "<group>"; };
 		FFD562741A10C42A009A2D0D /* LFXAllLightsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXAllLightsCollection.h; sourceTree = "<group>"; };
 		FFD562751A10C42A009A2D0D /* LFXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXClient.h; sourceTree = "<group>"; };
 		FFD562761A10C42A009A2D0D /* LFXDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXDevice.h; sourceTree = "<group>"; };
@@ -326,10 +326,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1586C91A1257A50060642A /* LIFXKit.framework in Frameworks */,
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
 				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
-				FFD562721A10C3FB009A2D0D /* LIFXKit.framework in Frameworks */,
 				E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */,
 				FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */,
 				E7382A0319EBE595000AA7DA /* libz.dylib in Frameworks */,
@@ -475,8 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				FFD5626D1A10C3FB009A2D0D /* libz.dylib */,
+				FF1586C81A1257A50060642A /* LIFXKit.framework */,
 				FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */,
-				FFD5626F1A10C3FB009A2D0D /* LIFXKit.framework */,
 				81B8D1691A0BBA9D0021CC84 /* UIKit.framework */,
 				8145B6231A08C1AA00240CDF /* LocalAuthentication.framework */,
 				E7382A0419EBE5C3000AA7DA /* libicucore.dylib */,
@@ -1184,6 +1184,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+					"$(PROJECT_DIR)/Home",
+					Project,
 				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1209,6 +1211,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/Development/Projects/LIFXSample/LIFXSample,
+					"$(PROJECT_DIR)/Home",
+					Project,
 				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
