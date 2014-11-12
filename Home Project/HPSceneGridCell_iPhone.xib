@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_parts_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-UM-hLz">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_parts_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-UM-hLz">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt6-ES-GWw">
@@ -43,10 +43,6 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <constraints>
-                <constraint firstItem="t0k-UM-hLz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="S9Z-u7-MXS"/>
-                <constraint firstItem="t0k-UM-hLz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xnW-Ff-aY5"/>
-            </constraints>
             <size key="customSize" width="-126" height="163"/>
             <connections>
                 <outlet property="descriptionView" destination="4hS-yZ-f9k" id="YRn-dQ-IeU"/>

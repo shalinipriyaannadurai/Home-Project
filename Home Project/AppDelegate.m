@@ -45,10 +45,13 @@
      ^(BOOL success, NSError *authenticationError) {
          if (success) {
              msg =@"Success";
-             UINavigationController *svcNavController =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardParentController"];
-             [svcNavController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 UINavigationController *svcNavController =[storyBoard instantiateViewControllerWithIdentifier:@"DashBoardParentController"];
+                 [svcNavController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+                 
+                 [self.window setRootViewController:svcNavController ];
+             });
              
-             [self.window setRootViewController:svcNavController ];
              
          } else {
              msg = [NSString stringWithFormat:@"Fail with reason %@", authenticationError.localizedDescription];

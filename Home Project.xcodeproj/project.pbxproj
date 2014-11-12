@@ -132,7 +132,6 @@
 		E7382A0519EBE5C3000AA7DA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7382A0419EBE5C3000AA7DA /* libicucore.dylib */; };
 		E7AC5F5919F11B6800A8A303 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AC5F5719F11B6700A8A303 /* LaunchScreen.xib */; };
 		E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9942F19F6914B00061F78 /* Main_iPhone.storyboard */; };
-		EF3885C61A1259930037758E /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		EF3885DB1A1259D70037758E /* HPAddSceneController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885C71A1259D70037758E /* HPAddSceneController_iPhone.xib */; };
 		EF3885DC1A1259D70037758E /* HPAddSceneController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885C91A1259D70037758E /* HPAddSceneController.m */; };
 		EF3885DD1A1259D70037758E /* HPAddSceneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CA1A1259D70037758E /* HPAddSceneController.xib */; };
@@ -170,6 +169,7 @@
 		EF3886181A125B690037758E /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886021A125B690037758E /* no_image.png */; };
 		EF3886191A125B690037758E /* Unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886031A125B690037758E /* Unchecked.png */; };
 		EF38861A1A125B690037758E /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886041A125B690037758E /* Unchecked@2x.png */; };
+		EF591B901A13362600D85E2B /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
 		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
 		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
@@ -405,7 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3885C61A1259930037758E /* LIFXKit.framework in Frameworks */,
+				EF591B901A13362600D85E2B /* LIFXKit.framework in Frameworks */,
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
 				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
@@ -1041,6 +1041,7 @@
 					};
 					E73829E819EBCEA6000AA7DA = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 93ZK4B4MRX;
 						TestTargetID = E73829CF19EBCEA6000AA7DA;
 					};
 				};
@@ -1379,23 +1380,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Home",
-					Project,
-					"$(PROJECT_DIR)/Home",
-					Project,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Home Project";
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aa483fd2-95d7-4b16-8f91-5896dd71526e";
+				PROVISIONING_PROFILE = "49392f20-865a-4af0-a74c-8aecd1622042";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1407,23 +1399,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Home",
-					Project,
-					"$(PROJECT_DIR)/Home",
-					Project,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Home Project";
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aa483fd2-95d7-4b16-8f91-5896dd71526e";
+				PROVISIONING_PROFILE = "49392f20-865a-4af0-a74c-8aecd1622042";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1432,6 +1415,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1443,6 +1428,7 @@
 				INFOPLIST_FILE = "Home ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Home Project.app/Home Project";
 			};
 			name = Debug;
@@ -1451,6 +1437,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1458,6 +1446,7 @@
 				INFOPLIST_FILE = "Home ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Home Project.app/Home Project";
 			};
 			name = Release;

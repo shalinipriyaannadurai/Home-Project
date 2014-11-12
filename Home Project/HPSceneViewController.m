@@ -135,7 +135,6 @@
     HPSceneGridCell *cell;
     if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone){
         cell = (HPSceneGridCell*)[cv dequeueReusableCellWithReuseIdentifier:@"SceneCell_iPhone" forIndexPath:indexPath];
-        [cell.contentView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
             }
     else{
         cell = (HPSceneGridCell*)[cv dequeueReusableCellWithReuseIdentifier:@"SceneCell" forIndexPath:indexPath];
@@ -169,14 +168,23 @@
 
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    double delayInSeconds = 0.0;
+
     HPScence *tmp=[self getScene:[self.scenes valueForKey:[[self.scenes allKeys] objectAtIndex:[indexPath row]]]];
     if (tmp.param!=nil && [tmp.param count]!=0) {
         for (HPBulb *b in tmp.param ) {
-            float brightness=b.brightness;
-            NSString *device=[NSMutableString stringWithFormat:@"/api/v1/device/perform/%@",b.deviceId];
-            NSString *request = @"on";
-            NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %f, \\\"color\\\": { \\\"model\\\": \\\"rgb\\\", \\\"rgb\\\": { \\\"r\\\": 255, \\\"g\\\": 255, \\\"b\\\": 255 }}}",brightness];
-            [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            NSLog(@"pop time  %f",delayInSeconds);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                // code to be executed on main thread.If you want to run in another thread, create other queue
+                float brightness=b.brightness;
+                NSString *device=[NSMutableString stringWithFormat:@"/api/v1/device/perform/%@",b.deviceId];
+                NSString *request = @"on";
+                NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %f, \\\"color\\\": { \\\"model\\\": \\\"rgb\\\", \\\"rgb\\\": { \\\"r\\\": 255, \\\"g\\\": 255, \\\"b\\\": 255 }}}",brightness];
+                [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];
+                
+            });
+            delayInSeconds+=3.0;
         }
     }
 }
@@ -244,15 +252,22 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    double delayInSeconds = 0.0;
     HPScence *tmp=[self getScene:[self.scenes valueForKey:[[self.scenes allKeys] objectAtIndex:[indexPath row]]]];
     if (tmp.param!=nil && [tmp.param count]!=0) {
         for (HPBulb *b in tmp.param ) {
-            float brightness=b.brightness;
-            NSString *device=[NSMutableString stringWithFormat:@"/api/v1/device/perform/%@",b.deviceId];
-            NSString *request = @"on";
-            NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %f, \\\"color\\\": { \\\"model\\\": \\\"rgb\\\", \\\"rgb\\\": { \\\"r\\\": 255, \\\"g\\\": 255, \\\"b\\\": 255 }}}",brightness];
-            [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            NSLog(@"pop time  %f",delayInSeconds);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                // code to be executed on main thread.If you want to run in another thread, create other queue
+                float brightness=b.brightness;
+                NSString *device=[NSMutableString stringWithFormat:@"/api/v1/device/perform/%@",b.deviceId];
+                NSString *request = @"on";
+                NSString *parameters = [NSString stringWithFormat:@"{ \\\"brightness\\\": %f, \\\"color\\\": { \\\"model\\\": \\\"rgb\\\", \\\"rgb\\\": { \\\"r\\\": 255, \\\"g\\\": 255, \\\"b\\\": 255 }}}",brightness];
+                [[Client sharedClient] performWithDevice:device andRequest:request andParameters:parameters];
+
+            });
+            delayInSeconds+=3.0;
         }
     }
 }
