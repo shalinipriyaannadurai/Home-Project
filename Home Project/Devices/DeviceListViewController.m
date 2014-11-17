@@ -96,9 +96,15 @@
             LFXLight *light = [_deviceDetailArray objectAtIndex:indexPath.row];
             listingCell.deviceName.text = @"LIFX Light";
             listingCell.descriptionLabel.text=@"Replacement for Lock";
-
-            [listingCell.onOffSwitch setOn:light.powerState animated:YES];
+            [listingCell.onOffSwitch setOn:NO animated:YES];
             listingCell.txtBrightness.hidden=TRUE;
+            //double color=light.powerState?120.0:0.0;
+            light.powerState=YES;
+            LFXHSBKColor *hsbkColor = [LFXHSBKColor colorWithHue:0.0
+                                                      saturation:1.0
+                                                      brightness:1.0];
+            
+            [light setColor:hsbkColor];
         }
             break;
         case eThermostat:
@@ -181,11 +187,16 @@
         case eSecurity:
         {
             LFXLight *light = [_deviceDetailArray objectAtIndex:0];
-            light.powerState = state;
-            
+            double color=state?120.0:0.0;
+            LFXHSBKColor *hsbkColor = [LFXHSBKColor colorWithHue:color
+                                                      saturation:1.0
+                                                      brightness:1.0];
+            [light setColor:hsbkColor];
+            light.powerState = YES;
+
             NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
 
-            NSString *status = light.powerState? @"UnLocked" : @"Locked";
+            NSString *status = state? @"UnLocked" : @"Locked";
                                               
             NSString *date = @"2014-11-11 17:20:11";
             

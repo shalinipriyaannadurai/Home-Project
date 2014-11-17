@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "HPDevice.h"
 @interface HPSceneViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *gridView;
 @property (weak, nonatomic) IBOutlet UITableView *listView;
-- (IBAction)addButtonTapped:(id)sender;
-- (IBAction)typeButtonTapped:(id)sender;
 @property (nonatomic,retain)NSMutableDictionary *scenes;
 @property (nonatomic,retain)NSMutableDictionary *devices;
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+- (IBAction)addButtonTapped:(id)sender;
+- (IBAction)typeButtonTapped:(id)sender;
+- (IBAction)backButtonTapped:(id)sender;
 
 @end

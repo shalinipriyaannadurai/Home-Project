@@ -14,11 +14,11 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsh-pR-pPR" id="43s-M5-vUb">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_parts_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="UA9-9e-gMs">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_parts_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="UA9-9e-gMs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-tu-dZf">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-tu-dZf">
                         <rect key="frame" x="8" y="8" width="34" height="33"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -35,7 +35,7 @@
                             </mask>
                         </variation>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-S5-rLL">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-S5-rLL">
                         <rect key="frame" x="57" y="8" width="263" height="33"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="33" id="BTV-c8-bUd"/>
@@ -48,6 +48,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="BTV-c8-bUd"/>
+                                <exclude reference="jfx-fq-L0X"/>
                             </mask>
                         </variation>
                     </label>
@@ -71,6 +72,7 @@
                     <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="6ZK-S5-rLL" secondAttribute="bottom" constant="8" symbolic="YES" id="Eh5-0w-a8z"/>
                     <constraint firstAttribute="trailing" secondItem="RiG-se-Kg5" secondAttribute="trailing" id="EoO-7t-os2"/>
                     <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" id="KsD-Ke-0Uh"/>
+                    <constraint firstItem="tQE-tu-dZf" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" constant="4" id="LE5-Jq-GV2"/>
                     <constraint firstItem="RiG-se-Kg5" firstAttribute="trailing" secondItem="6ZK-S5-rLL" secondAttribute="trailing" id="MBs-iv-iRg"/>
                     <constraint firstItem="UA9-9e-gMs" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="top" id="MCi-mW-eHh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="UA9-9e-gMs" secondAttribute="bottom" constant="-8.5" id="N3b-LA-JI3"/>
@@ -78,13 +80,17 @@
                     <constraint firstItem="6ZK-S5-rLL" firstAttribute="trailing" secondItem="RiG-se-Kg5" secondAttribute="trailing" id="Pbl-JD-M86"/>
                     <constraint firstAttribute="bottomMargin" secondItem="UA9-9e-gMs" secondAttribute="bottom" constant="-8.5" id="Rqf-pf-1pz"/>
                     <constraint firstItem="tQE-tu-dZf" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" id="U7n-2Q-H0s"/>
+                    <constraint firstItem="tQE-tu-dZf" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" id="W8a-IB-3cm"/>
                     <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" id="WgP-pT-TPZ"/>
                     <constraint firstItem="RiG-se-Kg5" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" constant="8" id="YAp-Ze-GyX"/>
                     <constraint firstItem="tQE-tu-dZf" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leadingMargin" id="Yqp-mk-k84"/>
                     <constraint firstItem="6ZK-S5-rLL" firstAttribute="top" secondItem="tQE-tu-dZf" secondAttribute="top" id="a5h-vX-Ker"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RiG-se-Kg5" secondAttribute="trailing" constant="8" id="aa2-oh-bGT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="RiG-se-Kg5" secondAttribute="bottom" constant="12.5" id="eGV-Xp-sfS"/>
                     <constraint firstItem="UA9-9e-gMs" firstAttribute="leading" secondItem="43s-M5-vUb" secondAttribute="leading" id="nku-2f-FpX"/>
                     <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="tQE-tu-dZf" secondAttribute="bottom" constant="8" symbolic="YES" id="qT3-HN-7XS"/>
+                    <constraint firstItem="RiG-se-Kg5" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="topMargin" constant="42" id="s7p-jG-hYA"/>
+                    <constraint firstItem="6ZK-S5-rLL" firstAttribute="leading" secondItem="tQE-tu-dZf" secondAttribute="trailing" constant="15" id="vHO-1M-41U"/>
                     <constraint firstItem="RiG-se-Kg5" firstAttribute="leading" secondItem="UA9-9e-gMs" secondAttribute="leading" id="xfF-Jm-Ljw"/>
                     <constraint firstItem="UA9-9e-gMs" firstAttribute="top" secondItem="43s-M5-vUb" secondAttribute="top" id="zrg-0w-QLb"/>
                 </constraints>
@@ -93,15 +99,23 @@
                         <exclude reference="Rqf-pf-1pz"/>
                         <exclude reference="zrg-0w-QLb"/>
                         <exclude reference="U7n-2Q-H0s"/>
+                        <exclude reference="Yqp-mk-k84"/>
                         <exclude reference="2If-X1-NH0"/>
                         <exclude reference="ADo-HV-CXN"/>
+                        <exclude reference="Eh5-0w-a8z"/>
                         <exclude reference="EoO-7t-os2"/>
                         <exclude reference="MBs-iv-iRg"/>
+                        <exclude reference="PRH-tO-Bmk"/>
                         <exclude reference="eGV-Xp-sfS"/>
                         <exclude reference="qT3-HN-7XS"/>
                         <exclude reference="xfF-Jm-Ljw"/>
                         <exclude reference="10Q-qi-gcf"/>
+                        <exclude reference="1fl-24-Kih"/>
+                        <exclude reference="BY9-yz-4cA"/>
+                        <exclude reference="C2j-kg-Ugg"/>
+                        <exclude reference="Pbl-JD-M86"/>
                         <exclude reference="WgP-pT-TPZ"/>
+                        <exclude reference="a5h-vX-Ker"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

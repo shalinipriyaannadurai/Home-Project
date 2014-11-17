@@ -13,7 +13,6 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface HPSceneViewController ()
 
-- (IBAction)backButtonTapped:(id)sender;
 @end
 
 @implementation HPSceneViewController
@@ -25,6 +24,7 @@
     self.listView.dataSource=self;
     self.gridView.delegate=self;
     self.gridView.dataSource=self;
+    
     if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
     [self.gridView registerNib:[UINib nibWithNibName:@"HPSceneGridCell_iPhone" bundle:nil] forCellWithReuseIdentifier:@"SceneCell_iPhone"];
     else
@@ -123,6 +123,24 @@
     }
     return scene;
 }
+-(void)putImage:(NSString *)imageName onView:(UIImageView *)imageView{
+    if (imageName==nil || [imageName isEqualToString:@""]) {
+        [imageView setImage:[UIImage imageNamed:@"no_image.png"]];
+    }
+    else{
+        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
+        [assetLibrary assetForURL:[NSURL URLWithString:imageName] resultBlock:^(ALAsset *asset) {
+            ALAssetRepresentation *rep = [asset defaultRepresentation];
+            Byte *buffer = (Byte*)malloc(rep.size);
+            NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
+            NSData *data = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];//this is NSData may be what you want
+            imageView.image = [UIImage imageWithData:data];
+        } failureBlock:^(NSError *err) {
+            NSLog(@"Error: %@",[err localizedDescription]);
+            [imageView setImage:[UIImage imageNamed:@"no_image.png"]];
+        }];
+    }
+}
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
@@ -144,22 +162,8 @@
         HPScence *tmp=[self getScene:[self.scenes valueForKey:[[self.scenes allKeys] objectAtIndex:[indexPath row]]]];
         cell.sceneName.text=tmp.name;
         cell.descriptionView.text=tmp.sceneDescription;
-        if (tmp.imageName==nil || [tmp.imageName isEqualToString:@""]) {
-            [cell.sceneImage setImage:[UIImage imageNamed:@"no_image.png"]];
-        }
-        else{
-        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
-        [assetLibrary assetForURL:[NSURL URLWithString:tmp.imageName] resultBlock:^(ALAsset *asset) {
-            ALAssetRepresentation *rep = [asset defaultRepresentation];
-            Byte *buffer = (Byte*)malloc(rep.size);
-            NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
-            NSData *data = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];//this is NSData may be what you want
-            cell.sceneImage.image = [UIImage imageWithData:data];
-        } failureBlock:^(NSError *err) {
-            NSLog(@"Error: %@",[err localizedDescription]);
-            cell.sceneImage.image = [UIImage imageNamed:@"no_image.png"];
-        }];
-        }
+        cell.descriptionView.textColor=[UIColor greenColor];
+        [self putImage:tmp.imageName onView:cell.sceneImage];
         cell.infoButton.tag=[indexPath row];
         [cell.infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -220,23 +224,9 @@
         HPScence *tmp=[self getScene:[self.scenes valueForKey:[[self.scenes allKeys] objectAtIndex:[indexPath row]]]];
         cell.sceneName.text=tmp.name;
         cell.descriptionView.text=tmp.sceneDescription;
+        cell.descriptionView.textColor=[UIColor greenColor];
         cell.backgroundColor=[UIColor clearColor];
-        if (tmp.imageName==nil || [tmp.imageName isEqualToString:@""]) {
-            [cell.sceneImage setImage:[UIImage imageNamed:@"no_image.png"]];
-        }
-        else{
-        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
-        [assetLibrary assetForURL:[NSURL URLWithString:tmp.imageName] resultBlock:^(ALAsset *asset) {
-            ALAssetRepresentation *rep = [asset defaultRepresentation];
-            Byte *buffer = (Byte*)malloc(rep.size);
-            NSUInteger buffered = [rep getBytes:buffer fromOffset:0.0 length:rep.size error:nil];
-            NSData *data = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];//this is NSData may be what you want
-            cell.sceneImage.image = [UIImage imageWithData:data];
-        } failureBlock:^(NSError *err) {
-            NSLog(@"Error: %@",[err localizedDescription]);
-            cell.sceneImage.image = [UIImage imageNamed:@"no_image.png"];
-        }];
-        }
+        [self putImage:tmp.imageName onView:cell.sceneImage];
         cell.infoButton.tag=[indexPath row];
         [cell.infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }

@@ -102,7 +102,6 @@
             [self.scene.param addObject:[self.devices objectAtIndex:rButton.tag/2-1]];
         }
         if ([rButton isKindOfClass:[UIButton class]]==YES && ((UIButton*)rButton).selected==NO) {
- 
        
         }
     }

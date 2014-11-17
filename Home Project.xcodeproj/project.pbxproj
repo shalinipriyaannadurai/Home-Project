@@ -141,9 +141,7 @@
 		EF3885E11A1259D70037758E /* HPSceneTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */; };
 		EF3885E21A1259D70037758E /* HPSceneTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D11A1259D70037758E /* HPSceneTableCell.m */; };
 		EF3885E31A1259D70037758E /* HPSceneTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D21A1259D70037758E /* HPSceneTableCell.xib */; };
-		EF3885E41A1259D70037758E /* HPSceneViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */; };
 		EF3885E51A1259D70037758E /* HPSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D51A1259D70037758E /* HPSceneViewController.m */; };
-		EF3885E61A1259D70037758E /* HPSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D61A1259D70037758E /* HPSceneViewController.xib */; };
 		EF3885E71A1259D70037758E /* HPTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */; };
 		EF3885E81A1259D70037758E /* HPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3885D91A1259D70037758E /* HPTableViewCell.m */; };
 		EF3885E91A1259D70037758E /* HPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF3885DA1A1259D70037758E /* HPTableViewCell.xib */; };
@@ -169,7 +167,7 @@
 		EF3886181A125B690037758E /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886021A125B690037758E /* no_image.png */; };
 		EF3886191A125B690037758E /* Unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886031A125B690037758E /* Unchecked.png */; };
 		EF38861A1A125B690037758E /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886041A125B690037758E /* Unchecked@2x.png */; };
-		EF591B901A13362600D85E2B /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
+		EF4AE5961A19C7990063F046 /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
 		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
 		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
@@ -353,10 +351,8 @@
 		EF3885D01A1259D70037758E /* HPSceneTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSceneTableCell.h; sourceTree = "<group>"; };
 		EF3885D11A1259D70037758E /* HPSceneTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSceneTableCell.m; sourceTree = "<group>"; };
 		EF3885D21A1259D70037758E /* HPSceneTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneTableCell.xib; sourceTree = "<group>"; };
-		EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneViewController_iPhone.xib; sourceTree = "<group>"; };
 		EF3885D41A1259D70037758E /* HPSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSceneViewController.h; sourceTree = "<group>"; };
 		EF3885D51A1259D70037758E /* HPSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSceneViewController.m; sourceTree = "<group>"; };
-		EF3885D61A1259D70037758E /* HPSceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSceneViewController.xib; sourceTree = "<group>"; };
 		EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		EF3885D81A1259D70037758E /* HPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTableViewCell.h; sourceTree = "<group>"; };
 		EF3885D91A1259D70037758E /* HPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTableViewCell.m; sourceTree = "<group>"; };
@@ -405,7 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF591B901A13362600D85E2B /* LIFXKit.framework in Frameworks */,
+				EF4AE5961A19C7990063F046 /* LIFXKit.framework in Frameworks */,
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
 				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
@@ -932,8 +928,6 @@
 				EF3885D01A1259D70037758E /* HPSceneTableCell.h */,
 				EF3885D11A1259D70037758E /* HPSceneTableCell.m */,
 				EF3885D21A1259D70037758E /* HPSceneTableCell.xib */,
-				EF3885D31A1259D70037758E /* HPSceneViewController_iPhone.xib */,
-				EF3885D61A1259D70037758E /* HPSceneViewController.xib */,
 				EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */,
 				EF3885D81A1259D70037758E /* HPTableViewCell.h */,
 				EF3885D91A1259D70037758E /* HPTableViewCell.m */,
@@ -1170,7 +1164,6 @@
 				AF124C421A035B7200F9591D /* top_navi.png in Resources */,
 				AF124C541A035B7200F9591D /* play_icon.png in Resources */,
 				AF124C5E1A035B7200F9591D /* loading_line1.png in Resources */,
-				EF3885E61A1259D70037758E /* HPSceneViewController.xib in Resources */,
 				EF3885E71A1259D70037758E /* HPTableViewCell_iPhone.xib in Resources */,
 				AF124C171A035B7200F9591D /* bulb_icon.png in Resources */,
 				AF124C1F1A035B7200F9591D /* frequen_bg@2x.png in Resources */,
@@ -1181,7 +1174,6 @@
 				8145B6291A08FA4700240CDF /* ElementCell_iPhone.xib in Resources */,
 				E7B9943019F6914B00061F78 /* Main_iPhone.storyboard in Resources */,
 				AF124C201A035B7200F9591D /* heat_icon.png in Resources */,
-				EF3885E41A1259D70037758E /* HPSceneViewController_iPhone.xib in Resources */,
 				EF3886111A125B690037758E /* image icon.png in Resources */,
 				AF124C351A035B7200F9591D /* number_bg@2x.png in Resources */,
 				AF124C4E1A035B7200F9591D /* lock_icon.png in Resources */,
@@ -1380,7 +1372,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Home Project";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Home",
+					Project,
+					"$(PROJECT_DIR)/Home",
+					Project,
+					"$(PROJECT_DIR)/Home",
+					Project,
+				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1399,7 +1398,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Home Project";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Home",
+					Project,
+					"$(PROJECT_DIR)/Home",
+					Project,
+					"$(PROJECT_DIR)/Home",
+					Project,
+				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

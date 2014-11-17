@@ -8,7 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "Client.h"
 #import "HPDevice.h"
-@interface HPAddSceneController: UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,ClientDelegate>
+@interface HPAddSceneController: UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,ClientDelegate,UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *deviceList;
 @property (nonatomic,retain)NSMutableArray *devices;
 @property (weak, nonatomic) IBOutlet UITextField *sceneName;
@@ -16,6 +17,7 @@
 @property (retain, nonatomic) HPScence *scene;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UITextField *hpSceneDesc;
+
 - (IBAction)cancelButtonTapped:(id)sender;
 - (IBAction)saveButtonTapped:(id)sender;
 - (IBAction)addButtonTapped:(id)sender;
