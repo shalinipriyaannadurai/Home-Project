@@ -290,7 +290,7 @@
                     <connections>
                         <outlet property="gridView" destination="KhP-1F-U7d" id="ZwQ-tW-29O"/>
                         <outlet property="listView" destination="pBt-u4-yZm" id="OaR-GS-DsT"/>
-                        <outlet property="view" destination="xks-L6-1SY" id="n2L-4v-zvT"/>
+                        <outlet property="view" destination="xks-L6-1SY" id="i7d-uo-ePy"/>
                     </connections>
                 </viewController>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xks-L6-1SY">
@@ -301,18 +301,18 @@
                             <rect key="frame" x="0.0" y="60" width="1024" height="708"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_navi.png" translatesAutoresizingMaskIntoConstraints="NO" id="oZM-Vy-8Aq">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="72"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="60"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scene" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InK-D2-7m8">
-                            <rect key="frame" x="0.0" y="2" width="1024" height="72"/>
+                            <rect key="frame" x="0.0" y="2" width="1024" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBt-u4-yZm">
-                            <rect key="frame" x="0.0" y="70" width="1024" height="700"/>
+                            <rect key="frame" x="0.0" y="60" width="1024" height="700"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -320,7 +320,7 @@
                             <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </tableView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="1024" placeholderIntrinsicHeight="697" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KhP-1F-U7d">
-                            <rect key="frame" x="0.0" y="71" width="1024" height="697"/>
+                            <rect key="frame" x="0.0" y="60" width="1024" height="697"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="11" minimumInteritemSpacing="10" id="r9c-Tz-cx7">
                                 <size key="itemSize" width="500" height="150"/>
@@ -330,7 +330,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-jb-Yn0">
-                            <rect key="frame" x="904" y="23" width="40" height="40"/>
+                            <rect key="frame" x="930" y="21" width="35" height="35"/>
                             <state key="normal" image="add.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -339,7 +339,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ft-XW-at9">
-                            <rect key="frame" x="962" y="23" width="40" height="40"/>
+                            <rect key="frame" x="975" y="21" width="35" height="35"/>
                             <state key="normal" image="list.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -348,7 +348,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsq-c1-QKU">
-                            <rect key="frame" x="25" y="28" width="54" height="30"/>
+                            <rect key="frame" x="21" y="24" width="54" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <state key="normal" title="Back">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,7 +362,7 @@
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcQ-9a-qcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3569" y="-1106"/>
+            <point key="canvasLocation" x="3596" y="-690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TQn-tm-5l4">

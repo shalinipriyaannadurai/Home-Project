@@ -47,6 +47,9 @@
                         <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="horiz_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="KtV-1m-qgN">
+                        <rect key="frame" x="0.0" y="100" width="1024" height="1"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
@@ -67,6 +70,7 @@
     <resources>
         <image name="edit.png" width="28" height="28"/>
         <image name="home_parts_bg.png" width="1024" height="150"/>
+        <image name="horiz_line.png" width="1" height="680"/>
         <image name="no_image.png" width="250" height="134"/>
     </resources>
 </document>
