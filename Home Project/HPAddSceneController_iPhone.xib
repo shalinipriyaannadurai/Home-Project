@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HPAddSceneController">
             <connections>
+                <outlet property="deleteButton" destination="rIw-ds-bSZ" id="zyd-zH-ma6"/>
                 <outlet property="deviceList" destination="Kjp-md-hd1" id="XjR-Cf-Ph1"/>
                 <outlet property="hpSceneDesc" destination="m1d-An-TSL" id="jcs-ZA-xa2"/>
                 <outlet property="sceneImage" destination="okX-qd-s2D" id="nRA-xm-FY0"/>
@@ -49,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-bC-nsw">
-                    <rect key="frame" x="247" y="24" width="59" height="30"/>
+                    <rect key="frame" x="267" y="24" width="47" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Save">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,12 +111,36 @@
                     <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="25" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1d-An-TSL">
-                    <rect key="frame" x="8" y="249" width="304" height="19"/>
+                    <rect key="frame" x="8" y="249" width="304" height="25"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIw-ds-bSZ">
+                    <rect key="frame" x="232" y="26" width="28" height="28"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="CWM-5g-edK"/>
+                        <constraint firstAttribute="height" constant="30" id="eiY-B9-uBp"/>
+                        <constraint firstAttribute="width" constant="30" id="iCH-Js-fku"/>
+                        <constraint firstAttribute="height" constant="28" id="xAk-oc-AwY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="X" backgroundImage="Unchecked.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="eiY-B9-uBp"/>
+                            <exclude reference="iCH-Js-fku"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="deleteButtonTapped:" destination="-1" eventType="touchUpInside" id="3PH-Km-8QZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -145,11 +170,13 @@
                 <constraint firstItem="HhU-bC-nsw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="f9f-Dz-H9W"/>
                 <constraint firstItem="XDt-eI-L4A" firstAttribute="centerX" secondItem="Kjp-md-hd1" secondAttribute="centerX" id="fYy-zY-jnT"/>
                 <constraint firstItem="Kjp-md-hd1" firstAttribute="bottom" secondItem="T9r-0p-Yca" secondAttribute="bottom" id="faK-5I-LxZ"/>
-                <constraint firstAttribute="trailing" secondItem="HhU-bC-nsw" secondAttribute="trailing" constant="14" id="hYl-Zn-Azk"/>
+                <constraint firstAttribute="trailing" secondItem="HhU-bC-nsw" secondAttribute="trailing" constant="8" id="hYl-Zn-Azk"/>
                 <constraint firstItem="m1d-An-TSL" firstAttribute="top" secondItem="8ZK-Zd-HdP" secondAttribute="bottom" constant="8" symbolic="YES" id="kRF-KG-rZN"/>
                 <constraint firstItem="Kjp-md-hd1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="297" id="khh-Qd-VfI"/>
                 <constraint firstAttribute="bottom" secondItem="XDt-eI-L4A" secondAttribute="bottom" constant="-8" id="kjV-7U-KFq"/>
                 <constraint firstAttribute="trailing" secondItem="fqc-Qy-PCP" secondAttribute="trailing" constant="14" id="l21-HQ-oKg"/>
+                <constraint firstItem="HhU-bC-nsw" firstAttribute="leading" secondItem="rIw-ds-bSZ" secondAttribute="trailing" constant="9" id="ltc-Pi-KqM"/>
+                <constraint firstItem="rIw-ds-bSZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="m2R-z7-pHs"/>
                 <constraint firstItem="8ZK-Zd-HdP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="m5h-Nk-BSA"/>
                 <constraint firstItem="XDt-eI-L4A" firstAttribute="leading" secondItem="T9r-0p-Yca" secondAttribute="leading" id="mOl-dw-LHf"/>
                 <constraint firstItem="XDt-eI-L4A" firstAttribute="centerX" secondItem="8ZK-Zd-HdP" secondAttribute="centerX" id="mUa-Fx-qCr"/>
@@ -158,7 +185,9 @@
                 <constraint firstAttribute="trailing" secondItem="XDt-eI-L4A" secondAttribute="trailing" id="o3D-up-eTL"/>
                 <constraint firstItem="xt5-XO-LOC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pgw-Ql-NPj"/>
                 <constraint firstItem="okX-qd-s2D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="69" id="qGf-dQ-1mu"/>
+                <constraint firstItem="rIw-ds-bSZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="rl7-OK-82Q"/>
                 <constraint firstItem="m1d-An-TSL" firstAttribute="top" secondItem="8ZK-Zd-HdP" secondAttribute="bottom" constant="8" id="sC3-yS-eIq"/>
+                <constraint firstItem="HhU-bC-nsw" firstAttribute="leading" secondItem="rIw-ds-bSZ" secondAttribute="trailing" constant="9" id="sWz-sY-0Vm"/>
                 <constraint firstItem="Kjp-md-hd1" firstAttribute="top" secondItem="m1d-An-TSL" secondAttribute="bottom" constant="13" id="t5B-vX-bZJ"/>
                 <constraint firstItem="8ZK-Zd-HdP" firstAttribute="leading" secondItem="m1d-An-TSL" secondAttribute="leading" id="uRR-pZ-Vnm"/>
                 <constraint firstItem="8ZK-Zd-HdP" firstAttribute="top" secondItem="okX-qd-s2D" secondAttribute="bottom" constant="8" symbolic="YES" id="vWq-VE-DC1"/>
@@ -182,15 +211,18 @@
                     <exclude reference="uRR-pZ-Vnm"/>
                     <exclude reference="vWq-VE-DC1"/>
                     <exclude reference="xZ6-Jc-aCM"/>
+                    <exclude reference="rl7-OK-82Q"/>
                     <exclude reference="kRF-KG-rZN"/>
+                    <exclude reference="sWz-sY-0Vm"/>
                     <exclude reference="khh-Qd-VfI"/>
                     <exclude reference="t5B-vX-bZJ"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="470" y="287"/>
+            <point key="canvasLocation" x="470" y="283"/>
         </view>
     </objects>
     <resources>
+        <image name="Unchecked.png" width="36" height="36"/>
         <image name="image icon.png" width="36" height="36"/>
         <image name="loginbg.png" width="1024" height="768"/>
         <image name="no_image.png" width="250" height="134"/>

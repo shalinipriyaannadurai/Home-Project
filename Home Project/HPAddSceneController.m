@@ -51,6 +51,7 @@
     // Do any additional setup after loading the view from its nib.
     if (self.scene!=nil) {
         self.isExistingScene=YES;
+        self.deleteButton.hidden=NO;
         self.sceneName.text=self.scene.name;
         self.hpSceneDesc.text=self.scene.sceneDescription;
         [self setImage];
@@ -88,6 +89,21 @@
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickerController.delegate = self;
     [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (IBAction)deleteButtonTapped:(id)sender {
+    NSMutableDictionary *p=[NSMutableDictionary dictionary];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults valueForKey:@"HPScenes"]!=nil) {
+        [p addEntriesFromDictionary:[defaults valueForKey:@"HPScenes"]];
+        if ([p valueForKey:self.scene.name]!=nil) {
+            [p removeObjectForKey:self.scene.name];
+        }
+        [defaults setObject:p forKey:@"HPScenes"];
+    }
+    [defaults synchronize];
+    [self dismissViewControllerAnimated:NO completion:nil];
+ 
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
@@ -192,6 +208,7 @@
         cell = [nib objectAtIndex:0];
     }
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor=[UIColor clearColor];
     cell.isDeviceSelected.tag=[indexPath row]*2+2;
     cell.isDeviceSelected.selected=NO;

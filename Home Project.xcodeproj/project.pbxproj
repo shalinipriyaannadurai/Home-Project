@@ -167,7 +167,7 @@
 		EF3886181A125B690037758E /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886021A125B690037758E /* no_image.png */; };
 		EF3886191A125B690037758E /* Unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886031A125B690037758E /* Unchecked.png */; };
 		EF38861A1A125B690037758E /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3886041A125B690037758E /* Unchecked@2x.png */; };
-		EF4AE5961A19C7990063F046 /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
+		EF4AE5971A1A1FD60063F046 /* LIFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1586C81A1257A50060642A /* LIFXKit.framework */; };
 		EF7025E41A0B8B7C0092848B /* HPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7025E31A0B8B7C0092848B /* HPDevice.m */; };
 		FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626D1A10C3FB009A2D0D /* libz.dylib */; };
 		FFD562711A10C3FB009A2D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD5626E1A10C3FB009A2D0D /* SystemConfiguration.framework */; };
@@ -401,7 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4AE5961A19C7990063F046 /* LIFXKit.framework in Frameworks */,
+				EF4AE5971A1A1FD60063F046 /* LIFXKit.framework in Frameworks */,
 				81B8D16A1A0BBA9D0021CC84 /* UIKit.framework in Frameworks */,
 				FFD562701A10C3FB009A2D0D /* libz.dylib in Frameworks */,
 				8168A52D1A09FD09005943EA /* LocalAuthentication.framework in Frameworks */,
@@ -920,14 +920,14 @@
 			children = (
 				EF3885C71A1259D70037758E /* HPAddSceneController_iPhone.xib */,
 				EF3885CA1A1259D70037758E /* HPAddSceneController.xib */,
-				EF3885CB1A1259D70037758E /* HPSceneGridCell_iPhone.xib */,
 				EF3885CC1A1259D70037758E /* HPSceneGridCell.h */,
 				EF3885CD1A1259D70037758E /* HPSceneGridCell.m */,
 				EF3885CE1A1259D70037758E /* HPSceneGridCell.xib */,
-				EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */,
+				EF3885CB1A1259D70037758E /* HPSceneGridCell_iPhone.xib */,
 				EF3885D01A1259D70037758E /* HPSceneTableCell.h */,
 				EF3885D11A1259D70037758E /* HPSceneTableCell.m */,
 				EF3885D21A1259D70037758E /* HPSceneTableCell.xib */,
+				EF3885CF1A1259D70037758E /* HPSceneTableCell_iPhone.xib */,
 				EF3885D71A1259D70037758E /* HPTableViewCell_iPhone.xib */,
 				EF3885D81A1259D70037758E /* HPTableViewCell.h */,
 				EF3885D91A1259D70037758E /* HPTableViewCell.m */,
@@ -1379,6 +1379,8 @@
 					Project,
 					"$(PROJECT_DIR)/Home",
 					Project,
+					"$(PROJECT_DIR)/Home",
+					Project,
 				);
 				INFOPLIST_FILE = "Home Project/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1399,6 +1401,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Home",
+					Project,
 					"$(PROJECT_DIR)/Home",
 					Project,
 					"$(PROJECT_DIR)/Home",

@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *sceneName;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIImageView *sceneImage;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionView;
 
 @end

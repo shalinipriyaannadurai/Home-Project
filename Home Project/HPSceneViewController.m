@@ -219,6 +219,7 @@
             cell = [nib objectAtIndex:0];
         }
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     if ([self.scenes count]>=1) {
         HPScence *tmp=[self getScene:[self.scenes valueForKey:[[self.scenes allKeys] objectAtIndex:[indexPath row]]]];

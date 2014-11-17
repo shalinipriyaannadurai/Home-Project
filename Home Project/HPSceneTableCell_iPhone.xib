@@ -48,24 +48,24 @@
                             <constraint firstAttribute="height" constant="1" id="Ae6-DS-hXE"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR0-PX-gVp">
-                        <rect key="frame" x="124" y="35" width="191" height="60"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <inset key="scrollIndicatorInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vb-nC-h3r">
+                        <rect key="frame" x="128" y="41" width="187" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="cTF-As-tKX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="44d-2g-2BX"/>
                     <constraint firstItem="cTF-As-tKX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="8UQ-sg-lm1"/>
                     <constraint firstItem="cTF-As-tKX" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FF4-XA-Pjg"/>
+                    <constraint firstItem="0Vb-nC-h3r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="33" id="Jvn-VV-hbR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="A5Y-Y3-LoN" secondAttribute="trailing" constant="-8" id="MmK-jW-zOu"/>
                     <constraint firstItem="A5Y-Y3-LoN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="Yvd-2H-RqH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0Vb-nC-h3r" secondAttribute="trailing" constant="3" id="keP-O2-uCA"/>
                     <constraint firstItem="A5Y-Y3-LoN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="92" id="xoU-JM-scE"/>
+                    <constraint firstItem="0Vb-nC-h3r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="120" id="y7z-tf-wCz"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -75,7 +75,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="descriptionView" destination="uR0-PX-gVp" id="mTU-tC-eF9"/>
+                <outlet property="descriptionView" destination="0Vb-nC-h3r" id="PgN-Oe-V4r"/>
                 <outlet property="infoButton" destination="cTF-As-tKX" id="Pcg-kk-hdc"/>
                 <outlet property="sceneImage" destination="Gq5-FN-UWt" id="KU8-FQ-Ncq"/>
                 <outlet property="sceneName" destination="yj4-W1-MXr" id="Tuv-Pp-XtQ"/>
